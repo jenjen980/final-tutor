@@ -1,6 +1,6 @@
 // server/routes/index.js
 
-// const user = require('./user')
+const user = require('./user')
 const tutor = require('./tutor')
 
 module.exports = (router) => {
