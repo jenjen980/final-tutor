@@ -26,18 +26,16 @@ app.engine("handlebars", hbs.engine);
 app.set("view engine", "handlebars");
 
 // Post Data
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: true })); //how the body is parsed
+app.use(bodyParser.json()); //only parses JSON requests
 
 // Session
 const expressSession = require("express-session");
-app.use(
-  expressSession({
-    resave: false,
-    saveUninitialized: true,
-    secret:
-      process.env.SESSION_SEC || "You must generate a random session secret"
-  })
-);
+app.use(expressSession({
+    secret: 'mean unicorn', //used for signing the cookie
+    resave: false,          //recommended default
+    saveUninitialized: false, //recomended default
+}));
 
 // Flash
 const flash = require("express-flash-messages");
@@ -60,31 +58,44 @@ app.use((req, res, next) => {
 
 // Passport
 const passport = require("passport");
-app.use(passport.initialize());
-app.use(passport.session());
-
-passport.serializeUser(function(user, done) {
-  done(null, user._id);
-});
-
-passport.deserializeUser(function(userId, done) {
-  User.findById(userId, (err, user) => done(err, user));
-});
-
-// Passport Local
 const LocalStrategy = require("passport-local").Strategy;
-const local = new LocalStrategy((username, password, done) => {
-  User.findOne({ username })
-    .then(user => {
-      if (!user || !user.validPassword(password)) {
-        done(null, false, { message: "Invalid username/password" });
-      } else {
-        done(null, user);
-      }
-    })
-    .catch(e => done(e));
-});
-passport.use("local", local);
+ passport.use(new LocalStrategy(
+   function(username, password, done) {
+     //name of database?
+     db.find(username, function(err, result) {
+     if (err) { return done(err); }
+     if (!user || user.password !==password) {
+       return done(null, false);
+     }
+     return done(null, user);
+   })
+  }
+ ));
+
+// app.use(passport.initialize());
+// app.use(passport.session());
+
+// passport.serializeUser(function(user, done) {
+//   done(null, user._id);
+// });
+
+// passport.deserializeUser(function(userId, done) {
+//   User.findById(userId, (err, user) => done(err, user));
+// });
+
+// // Passport Local
+// const local = new LocalStrategy((username, password, done) => {
+//   User.findOne({ username })
+//     .then(user => {
+//       if (!user || !user.validPassword(password)) {
+//         done(null, false, { message: "Invalid username/password" });
+//       } else {
+//         done(null, user);
+//       }
+//     })
+//     .catch(e => done(e));
+// });
+// passport.use("local", local);
 
 // Routes
 app.use("/", require("./authRoutes")(passport));
@@ -108,7 +119,6 @@ cloudinary.config({
     
 // };
 
-// let port = 5000 || process.env.PORT
 
 /** set up routes {API Endpoints} */
 // routes(router);

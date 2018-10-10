@@ -18,6 +18,6 @@ UserSchema.virtual("password").set(function(value) {
   this.passwordHash = bcrypt.hashSync(value, 12);
 });
 
-const User = mongoose.model("User", UserSchema);
+const User = mongoose.model("Users", UserSchema);
 
 module.exports = User;

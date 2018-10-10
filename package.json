@@ -11,6 +11,7 @@
     "express-flash-messages": "^0.1.1",
     "express-handlebars": "^3.0.0",
     "express-session": "^1.15.6",
+    "graphql-yoga": "^1.16.2",
     "handlebars-react": "0.0.16",
     "materialize-css": "^1.0.0-rc.2",
     "mongoose": "^5.3.1",
