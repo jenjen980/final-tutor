@@ -1,37 +1,40 @@
-// server/models/User.js
-
 const mongoose = require('mongoose')
+const Schema = mongoose.Schema
+const bcrypt = require('bcryptjs');
+mongoose.promise = Promise
 
+// Define userSchema
+const userSchema = new Schema({
 
-let UserSchema = new mongoose.Schema(
-    {
-        name: String,
-        email: String,
-        tutor: String,
-        tutor_id: String,
-        token: String,
-        tutor_pic: String,
-        followers: [                        //change this to what we need in our app..or take it out
-            {
-                type: mongoose.Schema.Types.ObjectId,
-                ref: 'User'
+            firstName: {
+                type: String,
+                default: ''
+            },
+            lastName: {
+                type: String,
+                default: ''
+            },
+            email: {
+                type: String,
+                lowercase: true,
+                unique: true,
+                required: true
+            },
+            role: {
+                type: String,
+                enum: ['Tutor', 'Student'],
+                default: 'Student'
+            },
+            password: {
+                type: String,
+                required: true
+            },
+            isDeleted: {
+                type: Boolean,
+                default: false
             }
-        ],
-        following: [
-            {
-                type: mongoose.Schema.Types.ObjectId,
-                ref: 'User'
-            }
-        ]
-    }
-)
-UserSchema.methods.follow = function (tutor_id) {
-    if (this.following.indexOf(tutor_id) === -1) {
-        this.following.push(tutor_id)        
-    }
-    return this.save()
-}
-UserSchema.methods.addFollower = function (fs) {
-    this.followers.push(fs)        
-}
-module.exports = mongoose.model('User', UserSchema)
+
+})
+
+const User = mongoose.model('User', userSchema)
+module.exports = User

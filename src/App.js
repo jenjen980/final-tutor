@@ -5,7 +5,8 @@ import AboutUs from "./Components/AboutUs";
 import Contact from "./Components/Contact";
 import Error from "./Components/Error";
 import NavBar from "./Components/NavBar";
-
+import Login from "./Components/Login";
+import Register from "./Components/Register";
 
 
 class App extends Component {
@@ -21,6 +22,8 @@ class App extends Component {
         <Switch>
           <Route path="/" component={AboutUs} exact/>
           <Route path="/contact" component={Contact} />
+          <Route path="/login" component={Login} />
+          <Route path="/register" component={Register} />
           <Route component={Error} />
         </Switch>
 
