@@ -2,6 +2,20 @@ import React from 'react';
 import { BrowserRouter, Route, Switch, Link } from 'react-router-dom';
 
 
+// import "../AboutUs";
+
+// const Hero = props => (
+//   <div className="hero text-center" style={{ backgroundImage: `url(${props.backgroundImage})` }}>
+//     {props.children}
+//   </div>
+// );
+
+// export default Hero;
+
+
+
+
+
 const AboutUs = () => {
     return (
     <div>
