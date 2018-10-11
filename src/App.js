@@ -20,6 +20,7 @@ class App extends Component {
       <NavBar />
 
         <Switch>
+          {/* <Route path="/" component={NavBar} /> */}
           <Route path="/" component={AboutUs} exact/>
           <Route path="/contact" component={Contact} />
           <Route path="/login" component={Login} />
