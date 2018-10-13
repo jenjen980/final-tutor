@@ -29,7 +29,7 @@ class SectionTypography extends React.Component {
               <h2>Typography</h2>
             </div>
             <GridContainer>
-              <div className={classes.typo}>
+              {/* <div className={classes.typo}>
                 <div className={classes.note}>Header 1</div>
                 <h1>The Life of Material Kit</h1>
               </div>
@@ -187,7 +187,7 @@ class SectionTypography extends React.Component {
                     classes.imgFluid
                   }
                 />
-              </GridItem>
+              </GridItem> */}
             </GridContainer>
             <GridContainer />
           </div>

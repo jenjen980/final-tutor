@@ -35,20 +35,20 @@ class SectionBasics extends React.Component {
     };
     this.handleChangeEnabled = this.handleChangeEnabled.bind(this);
   }
-  componentDidMount(){
-    nouislider.create(this.refs.slider1,{
-      start: [40],
-      connect: [true, false],
-      step: 1,
-      range: { min: 0, max: 100 }
-    });
-    nouislider.create(this.refs.slider2,{
-      start: [20, 60],
-      connect: [false, true, false],
-      step: 1,
-      range: { min: 0, max: 100 }
-    });
-  }
+  // componentDidMount(){
+  //   nouislider.create(this.refs.slider1,{
+  //     start: [40],
+  //     connect: [true, false],
+  //     step: 1,
+  //     range: { min: 0, max: 100 }
+  //   });
+  //   nouislider.create(this.refs.slider2,{
+  //     start: [20, 60],
+  //     connect: [false, true, false],
+  //     step: 1,
+  //     range: { min: 0, max: 100 }
+  //   });
+
   handleChange = name => event => {
     this.setState({ [name]: event.target.checked });
   };
@@ -569,12 +569,12 @@ class SectionBasics extends React.Component {
           <div id="sliders">
             <GridContainer>
               <GridItem xs={12} sm={12} md={6}>
-                <div className={classes.title}>
+                {/* <div className={classes.title}>
                   <h3>Sliders</h3>
                 </div>
                 <div ref="slider1" className="slider-primary"></div>
                 <br/>
-                <div ref="slider2" className="slider-info"></div>
+                <div ref="slider2" className="slider-info"></div> */}
               </GridItem>
               {/* <GridItem xs={12} sm={12} md={6}>
                 <div className={classes.title}>

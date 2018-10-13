@@ -31,61 +31,11 @@ class SectionNavbars extends React.Component {
       <div className={classes.section}>
         <div className={classes.container}>
           <GridContainer>
+           
+            {/* this is a menu/login bar we might (or not) */}
             <GridItem xs={12} sm={12} md={6}>
               <div className={classes.title}>
-                <h3>Menu</h3>
-              </div>
-              <Header
-                brand="Menu"
-                color="primary"
-                leftLinks={
-                  <List className={classes.list}>
-                    <ListItem className={classes.listItem}>
-                      <Button
-                        href="#pablo"
-                        className={classes.navLink}
-                        onClick={e => e.preventDefault()}
-                        color="transparent"
-                      >
-                        Link
-                      </Button>
-                    </ListItem>
-                    <ListItem className={classes.listItem}>
-                      <Button
-                        href="#pablo"
-                        className={classes.navLink}
-                        onClick={e => e.preventDefault()}
-                        color="transparent"
-                      >
-                        Link
-                      </Button>
-                    </ListItem>
-                    <ListItem className={classes.listItem}>
-                      <CustomDropdown
-                        buttonText="Dropdown"
-                        dropdownHeader="Dropdown Header"
-                        buttonProps={{
-                          className: classes.navLink,
-                          color: "transparent"
-                        }}
-                        dropdownList={[
-                          "Action",
-                          "Another action",
-                          "Something else here",
-                          { divider: true },
-                          "Separated link",
-                          { divider: true },
-                          "One more separated link"
-                        ]}
-                      />
-                    </ListItem>
-                  </List>
-                }
-              />
-            </GridItem>
-            <GridItem xs={12} sm={12} md={6}>
-              <div className={classes.title}>
-                <h3>Menu with Icons</h3>
+                <h3>Menu choices let me know which of those you want </h3>
               </div>
               <Header
                 brand="Icons"
@@ -128,140 +78,7 @@ class SectionNavbars extends React.Component {
               />
             </GridItem>
           </GridContainer>
-          <div className={classes.title}>
-            <h3>Navigation</h3>
-          </div>
-        </div>
-        <div id="navbar" className={classes.navbar}>
-          <div
-            className={classes.navigation}
-            style={{ backgroundImage: "url(" + image + ")" }}
-          >
-            <Header
-              brand="Brand"
-              color="rose"
-              leftLinks={
-                <List className={classes.list}>
-                  <ListItem className={classes.listItem}>
-                    <Button
-                      href="#pablo"
-                      className={classes.navLink}
-                      onClick={e => e.preventDefault()}
-                      color="transparent"
-                    >
-                      Link
-                    </Button>
-                  </ListItem>
-                  <ListItem className={classes.listItem}>
-                    <Button
-                      href="#pablo"
-                      className={classes.navLink}
-                      onClick={e => e.preventDefault()}
-                      color="transparent"
-                    >
-                      Link
-                    </Button>
-                  </ListItem>
-                </List>
-              }
-              rightLinks={
-                <div>
-                  <CustomInput
-                    white
-                    inputRootCustomClasses={classes.inputRootCustomClasses}
-                    formControlProps={{
-                      className: classes.formControl
-                    }}
-                    inputProps={{
-                      placeholder: "Search",
-                      inputProps: {
-                        "aria-label": "Search",
-                        className: classes.searchInput
-                      }
-                    }}
-                  />
-                  <Button justIcon round color="white">
-                    <Search className={classes.searchIcon} />
-                  </Button>
-                </div>
-              }
-            />
-            <Header
-              brand="Info Color"
-              color="info"
-              rightLinks={
-                <List className={classes.list}>
-                  <ListItem className={classes.listItem}>
-                    <Button
-                      href="#pablo"
-                      className={classes.navLink + " " + classes.navLinkActive}
-                      onClick={e => e.preventDefault()}
-                      color="transparent"
-                    >
-                      Discover
-                    </Button>
-                  </ListItem>
-                  <ListItem className={classes.listItem}>
-                    <Button
-                      href="#pablo"
-                      className={classes.navLink}
-                      onClick={e => e.preventDefault()}
-                      color="transparent"
-                    >
-                      Profile
-                    </Button>
-                  </ListItem>
-                  <ListItem className={classes.listItem}>
-                    <Button
-                      href="#pablo"
-                      className={classes.navLink}
-                      onClick={e => e.preventDefault()}
-                      color="transparent"
-                    >
-                      Settings
-                    </Button>
-                  </ListItem>
-                </List>
-              }
-            />
-            <Header
-              brand="Primary Color"
-              color="primary"
-              rightLinks={
-                <List className={classes.list}>
-                  <ListItem className={classes.listItem}>
-                    <Button
-                      href="#pablo"
-                      className={classes.navLink + " " + classes.navLinkActive}
-                      onClick={e => e.preventDefault()}
-                      color="transparent"
-                    >
-                      <Explore className={classes.icons} /> Discover
-                    </Button>
-                  </ListItem>
-                  <ListItem className={classes.listItem}>
-                    <Button
-                      href="#pablo"
-                      className={classes.navLink}
-                      onClick={e => e.preventDefault()}
-                      color="transparent"
-                    >
-                      <AccountCircle className={classes.icons} /> Profile
-                    </Button>
-                  </ListItem>
-                  <ListItem className={classes.listItem}>
-                    <Button
-                      href="#pablo"
-                      className={classes.navLink}
-                      onClick={e => e.preventDefault()}
-                      color="transparent"
-                    >
-                      <Icon className={classes.icons}>settings</Icon> Settings
-                    </Button>
-                  </ListItem>
-                </List>
-              }
-            />
+          {/* do not delete this bar */}
             <Header
               brand="Navbar with notifications"
               color="dark"
@@ -274,7 +91,7 @@ class SectionNavbars extends React.Component {
                       onClick={e => e.preventDefault()}
                       color="transparent"
                     >
-                      Discover
+                      Home
                     </Button>
                   </ListItem>
                   <ListItem className={classes.listItem}>
@@ -284,7 +101,7 @@ class SectionNavbars extends React.Component {
                       onClick={e => e.preventDefault()}
                       color="transparent"
                     >
-                      Wishlist
+                      My classes/students
                     </Button>
                   </ListItem>
                   <ListItem className={classes.listItem}>
@@ -327,109 +144,10 @@ class SectionNavbars extends React.Component {
                 </List>
               }
             />
-            <Header
-              brand="Navbar with profile"
-              rightLinks={
-                <List className={classes.list}>
-                  <ListItem className={classes.listItem}>
-                    <Button
-                      href="#pablo"
-                      className={classes.navLink}
-                      onClick={e => e.preventDefault()}
-                      color="transparent"
-                    >
-                      Discover
-                    </Button>
-                  </ListItem>
-                  <ListItem className={classes.listItem}>
-                    <Button
-                      href="#pablo"
-                      className={classes.navLink}
-                      onClick={e => e.preventDefault()}
-                      color="transparent"
-                    >
-                      Wishlist
-                    </Button>
-                  </ListItem>
-                  <ListItem className={classes.listItem}>
-                    <Button
-                      href="#pablo"
-                      className={classes.registerNavLink}
-                      onClick={e => e.preventDefault()}
-                      color="rose"
-                      round
-                    >
-                      Register
-                    </Button>
-                  </ListItem>
-                </List>
-              }
-            />
-            <Header
-              brand="Transparent"
-              color="transparent"
-              rightLinks={
-                <List className={classes.list}>
-                  <ListItem className={classes.listItem}>
-                    <Button
-                      color="transparent"
-                      className={
-                        classes.navLink + " " + classes.socialIconsButton
-                      }
-                    >
-                      <i
-                        className={
-                          classes.socialIcons +
-                          " " +
-                          classes.marginRight5 +
-                          " fab fa-twitter"
-                        }
-                      />{" "}
-                      Twitter
-                    </Button>
-                  </ListItem>
-                  <ListItem className={classes.listItem}>
-                    <Button
-                      color="transparent"
-                      className={
-                        classes.navLink + " " + classes.socialIconsButton
-                      }
-                    >
-                      <i
-                        className={
-                          classes.socialIcons +
-                          " " +
-                          classes.marginRight5 +
-                          " fab fa-facebook"
-                        }
-                      />{" "}
-                      Facebook
-                    </Button>
-                  </ListItem>
-                  <ListItem className={classes.listItem}>
-                    <Button
-                      color="transparent"
-                      className={
-                        classes.navLink + " " + classes.socialIconsButton
-                      }
-                    >
-                      <i
-                        className={
-                          classes.socialIcons +
-                          " " +
-                          classes.marginRight5 +
-                          " fab fa-instagram"
-                        }
-                      />{" "}
-                      Instagram
-                    </Button>
-                  </ListItem>
-                </List>
-              }
-            />
+
           </div>
         </div>
-      </div>
+      
     );
   }
 }

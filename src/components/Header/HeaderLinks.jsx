@@ -33,14 +33,14 @@ function HeaderLinks({ ...props }) {
           buttonIcon={Apps}
           dropdownList={[
             <Link to="/" className={classes.dropdownLink}>
-              All components
+              Main Page
             </Link>,
             <a
               href="https://creativetimofficial.github.io/material-kit-react/#/documentation"
               target="_blank"
               className={classes.dropdownLink}
             >
-              Documentation
+              NOTHING HERE
             </a>
           ]}
         />
