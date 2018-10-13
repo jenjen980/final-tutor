@@ -17,13 +17,7 @@ import Parallax from "components/Parallax/Parallax.jsx";
 import HeaderLinks from "components/Header/HeaderLinks.jsx";
 import SectionBasics from "./Sections/SectionBasics.jsx";
 import SectionNavbars from "./Sections/SectionNavbars.jsx";
-import SectionTabs from "./Sections/SectionTabs.jsx";
-// import SectionPills from "./Sections/SectionPills.jsx";
-
-import SectionTypography from "./Sections/SectionTypography.jsx";
-
-// import SectionCarousel from "./Sections/SectionCarousel.jsx";
-import SectionCompletedExamples from "./Sections/SectionCompletedExamples.jsx";
+// import SectionCompletedExamples from "./Sections/SectionCompletedExamples.jsx";
 import SectionLogin from "./Sections/SectionLogin.jsx";
 import SectionExamples from "./Sections/SectionExamples.jsx";
 
@@ -73,16 +67,14 @@ class Components extends React.Component {
           <SectionBasics />
           <SectionExamples />
           <SectionNavbars />
-          {/* <SectionExamples /> */}
-          <SectionTabs />
-          {/* <SectionPills /> */}
-          {/* <SectionNotifications /> */}
-          <SectionTypography />
-          {/* <SectionJavascript /> */}
-          {/* <SectionCarousel /> */}
-          <SectionCompletedExamples />
+
+        
+
+        
+
+         
           <SectionLogin />
-          </div>
+        </div>
         <Footer />
       </div>
     );
