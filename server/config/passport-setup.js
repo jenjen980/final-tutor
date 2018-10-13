@@ -1,7 +1,7 @@
 const passport =  require('passport');
 const LocalStrategy = require('passport-local').Strategy;
-const userModel = require('../database/models/user');
-const bcrypt = require("bcrypt-nodejs");
+const userModel = require('../Models/User');
+const bcrypt = require("bcrypt");
 
 passport.serializeUser((user, done)=>{
    console.log(user, "---------serialized")
@@ -19,34 +19,35 @@ const isValidPassword = function(user, password){
 
 
 
-passport.use('user-login', new LocalStrategy({
+// passport.use('user-login', new LocalStrategy({
+//    usernameField: 'email',
+//    passwordField: 'password',
+//    passReqToCallback: true
+
+// }, function(req, username, password, done){
+//    console.log(username, "username")
+//    console.log('---------------------------------------------');
+//    userModel.find({ email: username}).then(user =>{
+//        console.log(user, "user coming back from db++++++++++++");
+//        if(!user.length > 0) {
+//            return done(null, false);
+//        }
+//        if(!isValidPassword(user[0], password)){
+//            console.log("is valid")
+//            return done(null, false)
+//        }
+//        console.log('reached bottom')
+//        return done(null, user);
+//    })
+// }))
+
+passport.use( new LocalStrategy({
    usernameField: 'email',
    passwordField: 'password',
    passReqToCallback: true
 
 }, function(req, username, password, done){
-   console.log(username, "username")
-   console.log('---------------------------------------------');
-   userModel.find({ email: username}).then(user =>{
-       console.log(user, "user coming back from db++++++++++++");
-       if(!user.length > 0) {
-           return done(null, false);
-       }
-       if(!isValidPassword(user[0], password)){
-           console.log("is valid")
-           return done(null, false)
-       }
-       console.log('reached bottom')
-       return done(null, user);
-   })
-}))
-
-passport.use('user-reg', new LocalStrategy({
-   usernameField: 'email',
-   passwordField: 'password',
-   passReqToCallback: true
-
-}, function(req, username, password, done){
+    console.log(req)
    console.log(username, "username")
    console.log('---------------------------------------------');
    userModel.find({ email: username}).then(user =>{

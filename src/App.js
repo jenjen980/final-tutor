@@ -5,8 +5,8 @@ import AboutUs from "./Components/AboutUs";
 import Contact from "./Components/ContactUs/Contact";
 import Error from "./Components/Error";
 import NavBar from "./Components/NavBar";
-import Login from "./Components/Login";
-import Register from "./Components/Register";
+import Login from "./Components/Login/Login";
+import Register from "./Components/Register/Register";
 
 import Wrapper from "./Components/Wrapper";
 

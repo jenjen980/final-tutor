@@ -4,101 +4,65 @@
 const express = require("express");
 const routes = require('./routes/');
 const path = require("path");
-const mongoose = require('mongoose');
-// const cors = require('cors')
+const cors = require('cors')
 const bodyParser = require('body-parser');
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 // const helmet = require('helmet')
 const cloudinary = require('cloudinary');
 
 const app = express();
+app.use(cors());
 const router = express.Router();
 // const url = process.env.MONGODB_URI || "mongodb://localhost:27017/final-tutor" //change this to what we have
 
+const morgan = require('morgan')
+const passportSetup =require('./config/passport-setup');
+const session = require('express-session')
+const dbConnection = require('./config')
+const MongoStore = require('connect-mongo')(session)
+const passport = require('passport');
+const cookieSession = require('cookie-session');
+// const app = express()
+
 // BEGIN OF AUTH CODE
+app.use(cookieSession({
+  maxAge: 24 * 60 *60* 1000,
+  keys: "anything"
+}))
+app.use(passport.initialize());
+app.use(passport.session());
+
 // Require Schema
-const User = require("./Models/authModel");
+// const User = require("./Models/user");
 
-// Templates - Really needs to be react
-const expressHandlebars = require("express-handlebars");
-const hbs = expressHandlebars.create({ defaultLayout: "application" });
-app.engine("handlebars", hbs.engine);
-app.set("view engine", "handlebars");
+// Route requires
+const user = require('./Routes/user')
 
-// Post Data
-app.use(bodyParser.urlencoded({ extended: true })); //how the body is parsed
-app.use(bodyParser.json()); //only parses JSON requests
+// MIDDLEWARE
+app.use(morgan('dev'))
+app.use(
+    bodyParser.urlencoded({
+        extended: false
+    })
+)
+app.use(bodyParser.json())
 
-// Session
-const expressSession = require("express-session");
-app.use(expressSession({
-    secret: 'mean unicorn', //used for signing the cookie
-    resave: false,          //recommended default
-    saveUninitialized: false, //recomended default
-}));
-
-// Flash
-const flash = require("express-flash-messages");
-app.use(flash());
-
-// Connect to Mongoose
-mongoose.Promise = require("bluebird");
-app.use((req, res, next) => {
-  if (mongoose.connection.readyState) next();
-  else {
-    const mongoUrl = process.env.MONGO_URL || "mongodb://localhost/passport";
-    mongoose
-    //   .connect(mongoUrl, { useMongoClient: true })
-      .set('useCreateIndex', true)
-      .connect(mongoUrl, { useNewUrlParser: true })
-      .then(() => next())
-      .catch(err => console.error(`Mongoose Error: ${err.stack}`));
-  }
-});
+// Sessions
+app.use(
+  session({
+      secret: 'fraggle-rock', //pick a random string to make the hash that is generated secure
+      store: new MongoStore({ mongooseConnection: dbConnection }),
+      resave: false, //required
+      saveUninitialized: false //required
+  })
+)
 
 // Passport
-const passport = require("passport");
-const LocalStrategy = require("passport-local").Strategy;
- passport.use(new LocalStrategy(
-   function(username, password, done) {
-     //name of database?
-     db.find(username, function(err, result) {
-     if (err) { return done(err); }
-     if (!user || user.password !==password) {
-       return done(null, false);
-     }
-     return done(null, user);
-   })
-  }
- ));
-
-// app.use(passport.initialize());
-// app.use(passport.session());
-
-// passport.serializeUser(function(user, done) {
-//   done(null, user._id);
-// });
-
-// passport.deserializeUser(function(userId, done) {
-//   User.findById(userId, (err, user) => done(err, user));
-// });
-
-// // Passport Local
-// const local = new LocalStrategy((username, password, done) => {
-//   User.findOne({ username })
-//     .then(user => {
-//       if (!user || !user.validPassword(password)) {
-//         done(null, false, { message: "Invalid username/password" });
-//       } else {
-//         done(null, user);
-//       }
-//     })
-//     .catch(e => done(e));
-// });
-// passport.use("local", local);
+app.use(passport.initialize())
+app.use(passport.session()) // calls the deserializeUser
 
 // Routes
-app.use("/", require("./authRoutes")(passport));
+app.use('/user', user)
 
 //END OF AUTH CODE
 
