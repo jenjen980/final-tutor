@@ -1,11 +1,11 @@
 const express = require('express')
 const router = express.Router()
-const User = require('../database/models/user')
-const passport = require('../passport')
-
+const User = require('../Models/User')
+const passport = require('passport')
+//changed register and login routes from /login /register
 router.post('/register', (req, res, next) => {
    console.log( req.body, 'in user reg')
-   passport.authenticate('user-reg', (err, user, info)=>{
+   passport.authenticate('local', (err, user, info)=>{
        console.log(user, "in user reg")
        if(err){return next(err)}
        if(!user) {return res.json({user:false})}
@@ -29,7 +29,7 @@ router.post('/login',(req, res, next)=>{
        })
    })(req, res, next)
 })
-
+//May need to change route below
 router.get('/', (req, res, next) => {
    console.log('===== user!!======')
    console.log(req.user)
