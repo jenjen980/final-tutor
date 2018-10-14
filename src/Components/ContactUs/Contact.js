@@ -3,8 +3,7 @@ import "./Contact.css";
 import { BrowserRouter, Route, Switch, Link } from 'react-router-dom';
 
 import Background from '../ContactUs/background2.jpg';
-import Form from '../Form/Form';
-import Field from '../Form/Field';
+import Form from "../Form";
 
 
 var image = {
@@ -21,7 +20,7 @@ const Contact = props => {
         <section style={image}>
          <h4 style={{ padding: "50px 50px", textAlign: "center", color: "white", fontSize: "26px"}}>Contact Us</h4>
          </section>
-         {/* <Form /> */}
+         <Form />
          <p style={{ textAlign: "center", color: "purple" }}>ADD HERE</p>
        </div>
 

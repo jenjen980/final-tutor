@@ -1,58 +1,84 @@
-// import React, { Component } from 'react';
-// import { BrowserRouter, Route, Switch, Link } from 'react-router-dom';
 
-//  import Field from '../Form/Field';
-// // import Button
+import React, { Component } from "react";
+import "./Form.css";
 
 
+class Form extends Component {
+  // Setting the component's initial state
+  state = {
+    firstName: "",
+    lastName: "",
+    email: "",
+    message: ""
+  };
 
-// class Form extends Component {
-//     constructor(props) {
-//         super(props);
-//         this.state = {
-//             name:'',
-//             email: '',
-//             phone: '',
-//             message: '',
-//         };
-//         //this ensures this when calling this.updateField refers to form
-//         this.updateField = this.updateField.bind(this);
-//     }
+  handleInputChange = event => {
+    // Getting the value and name of the input which triggered the change
+    const { name, value } = event.target;
 
-//     updateField(field, value){
-//         this.setState({ [field]: value });
-//     }
+    // Updating the input's state
+    this.setState({
+      [name]: value
+    });
+  };
 
-//     render() {
-//         return (
-//             <div>
-//                 {/* Name field */}
-//                 <Field 
-//                  onChange={(event) => this.updateField("name", event.target.value)}
-//                  value={this.state.name} 
-//                  />
-//                  {/* email field */}
-//                 <Field 
-//                  onChange={(event) => this.updateField("email", event.target.value)}
-//                  value={this.state.email} 
-//                  />
-//                  {/* phone field */}
-//                 <Field 
-//                  onChange={(event) => this.updateField("phone", event.target.value)} 
-//                  textarea={true}
-//                  value={this.state.phone} 
-//                  />
-//                  {/* message textarea */}
-//                 <Field 
-//                  onChange={(event) => this.updateField("message", event.target.value)}
-//                  textarea  
-//                   value={this.state.message} 
-//                   />
-//                  {/* Submit Button */}
-//                 {/* <Button formValues={this.state} email="" /> */}
-//             </div>
-//         );
-//     }
-// }
+  handleFormSubmit = event => {
+    // Preventing the default behavior of the form submit (which is to refresh the page)
+    event.preventDefault();
 
-// export default Form;
+    // Alert the user their first and last name, clear `this.state.firstName` and `this.state.lastName`, clearing the inputs
+    alert(`Hello ${this.state.firstName} ${this.state.lastName} ${this.state.email} ${this.state.message}`);
+    this.setState({
+      firstName: "",
+      lastName: "",
+      email: "",
+      message: ""
+    });
+  };
+
+  render() {
+    // Notice how each input has a `value`, `name`, and `onChange` prop
+    return (
+      <div>
+        <p>
+          If you have any questions please contact us  
+          {this.state.firstName} {this.state.lastName}
+          {this.state.email} {this.state.message}
+        </p>
+        <form className="form">
+          <input
+            value={this.state.firstName}
+            name="firstName"
+            onChange={this.handleInputChange}
+            type="text"
+            placeholder="First Name"
+          />
+          <input
+            value={this.state.lastName}
+            name="lastName"
+            onChange={this.handleInputChange}
+            type="text"
+            placeholder="Last Name"
+          />
+                    <input
+            value={this.state.email}
+            name="email"
+            onChange={this.handleInputChange}
+            type="text"
+            placeholder="Email"
+          />
+                    <input
+            value={this.state.message}
+            name="message"
+            onChange={this.handleInputChange}
+            type="text"
+            placeholder="Message"
+          />
+          <button onClick={this.handleFormSubmit}>Submit</button>
+        </form>
+      </div>
+    );
+  }
+}
+
+export default Form;

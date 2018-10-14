@@ -5,6 +5,8 @@ import Background from '../AboutUs/background1.jpg';
 
 import Calendar from "../Calendar/App.js";
 
+
+
 // import 
 // import "../AboutUs";
 
@@ -36,6 +38,7 @@ const AboutUs = () => {
           ADD MORE HERE....
         </p>
         {/* <Calendar /> */}
+
       </div>
 
     );
