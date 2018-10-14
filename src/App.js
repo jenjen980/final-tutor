@@ -1,3 +1,4 @@
+
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
@@ -9,6 +10,9 @@ import Login from "./Components/Login";
 import Register from "./Components/Register";
 
 import Wrapper from "./Components/Wrapper";
+import Clap from "./Components/Clap";
+
+
 
 
 class App extends Component {
@@ -18,9 +22,8 @@ class App extends Component {
       <BrowserRouter>
 
       <div>
-        {/* <Wrapper /> */}
       <NavBar />
-
+      {/* <Clap /> */}
         <Switch>
           <Route path="/" component={AboutUs} exact/>
           <Route path="/contact" component={Contact} />
@@ -32,7 +35,7 @@ class App extends Component {
       </div>
 
           </BrowserRouter>
-       
+      
     );
   }
 }

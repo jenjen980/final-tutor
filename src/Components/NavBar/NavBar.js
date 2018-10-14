@@ -1,19 +1,20 @@
 import React from 'react';
+import "./NavBar.css";
 import { NavLink } from 'react-router-dom';
 
 
 const Navbar = () => {
     return (
 
-    <div>
-          <ul class="right hide-on-med-and-down">
-            <NavLink to="/">Home</NavLink>
-            <br />
-            <NavLink to="/contact">Contact</NavLink>
-            <br />
-            <NavLink to="/login">Login</NavLink>
-            <br />
-            <NavLink to="/register">Register</NavLink>
+    <div className="navi">
+          <ul>
+            <NavLink to="/">Home  </NavLink>
+            
+            <NavLink to="/contact">Contact  </NavLink>
+            
+            <NavLink to="/login">Login  </NavLink>
+            
+            <NavLink to="/register">Register     </NavLink>
           </ul> 
         </div>
     // </div>

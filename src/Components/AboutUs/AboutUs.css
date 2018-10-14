@@ -1,0 +1,8 @@
+.pic{
+    padding: "50px 50px"; 
+    text-align: "center"; 
+    color: "black"; 
+    font: "26px"; 
+    background-image: "../AboutUs/guitar1.jpg";
+    background-size: 50;
+}
