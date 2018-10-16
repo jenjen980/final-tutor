@@ -40,9 +40,11 @@ const isValidPassword = function(user, password){
 //        return done(null, user);
 //    })
 // }))
+const saltRounds = 10;
 
-passport.use( new LocalStrategy({
-   usernameField: 'email',
+
+passport.use('local', new LocalStrategy({
+   usernameField: 'username',
    passwordField: 'password',
    passReqToCallback: true
 
@@ -55,7 +57,7 @@ passport.use( new LocalStrategy({
        if(user.length > 0){
            return done(null, false)
        }else {
-           bcrypt.hash(password, null, null, function(err, hash){
+           bcrypt.hash(password, saltRounds, function(err, hash){
                userModel.create({
                    email: username,
                    password: hash,
