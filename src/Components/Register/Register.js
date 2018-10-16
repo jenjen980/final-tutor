@@ -1,6 +1,13 @@
 import React, { Component } from 'react';
 import "./register.css";
 import axios from 'axios';
+import {
+    BrowserRouter as Router,
+    Route,
+    Link,
+    Redirect,
+    withRouter
+  } from "react-router-dom";
 
 
 
@@ -63,15 +70,13 @@ class Register extends Component {
             console.log('login response: ')
             console.log(response)
             if (response.status === 200) {
-                // update App.js state
-                // this.props.updateUser({
-                //     loggedIn: true,
-                //     username: response.data.username
-                // })
-                // update the state to redirect to home
-                this.setState({
-                    redirectTo: '/'
-                })
+
+                // update the state to redirect to tutor or student page
+                if( response.data.user.role == "Tutor"){
+                    console.log("in redirect");
+                    this.props.history('/');
+                }
+            
             }
         }).catch(error => {
             console.log('login error: ')
@@ -108,4 +113,4 @@ class Register extends Component {
   }
 }
 
-export default Register;
+export default withRouter(Register);
