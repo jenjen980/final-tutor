@@ -80,14 +80,14 @@ class SectionNavbars extends React.Component {
           <GridItem xs={12}>
           <Header
           
-              brand="Navbar with profile"
+              brand="The Music Teacher"
               rightLinks={
                 <List className={classes.list}>
                   <ListItem className={classes.listItem}>
                     <Button
-                      href="#pablo"
+                      href="/"
                       className={classes.navLink}
-                      onClick={e => e.preventDefault()}
+                      onClick="/"
                       color="transparent"
                     >
                       About us
@@ -95,23 +95,23 @@ class SectionNavbars extends React.Component {
                   </ListItem>
                   <ListItem className={classes.listItem}>
                     <Button
-                      href="#pablo"
+                      href="/login"
                       className={classes.navLink}
-                      onClick={e => e.preventDefault()}
+                      onClick="/login"
                       color="transparent"
                     >
-                      Wishlist
+                      login
                     </Button>
                   </ListItem>
                   <ListItem className={classes.listItem}>
                     <Button
-                      href="#pablo"
+                      href="/register"
                       className={classes.registerNavLink}
-                      onClick={e => e.preventDefault()}
+                      onClick="/register"
                       color="rose"
                       round
                     >
-                      Register
+                      register
                     </Button>
                   </ListItem>
                 </List>

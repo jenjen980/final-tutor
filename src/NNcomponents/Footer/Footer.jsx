@@ -32,35 +32,23 @@ function Footer({ ...props }) {
                 className={classes.block}
                 target="_blank"
               >
-                Creative Tim
+                theJcrewProject
               </a>
             </ListItem>
             <ListItem className={classes.inlineBlock}>
-              <a
+              {/* <a
                 href="https://www.creative-tim.com/presentation"
                 className={classes.block}
                 target="_blank"
               >
                 About us
-              </a>
+              </a> */}
             </ListItem>
             <ListItem className={classes.inlineBlock}>
-              <a
-                href="http://blog.creative-tim.com/"
-                className={classes.block}
-                target="_blank"
-              >
-                Blog
-              </a>
+              
             </ListItem>
             <ListItem className={classes.inlineBlock}>
-              <a
-                href="https://www.creative-tim.com/license"
-                className={classes.block}
-                target="_blank"
-              >
-                Licenses
-              </a>
+             
             </ListItem>
           </List>
         </div>
@@ -68,13 +56,13 @@ function Footer({ ...props }) {
           &copy; {1900 + new Date().getYear()} , made with{" "}
           <Favorite className={classes.icon} /> by{" "}
           <a
-            href="https://www.creative-tim.com"
+            href=""
             className={aClasses}
             target="_blank"
           >
-            Creative Tim
+            Nadia, ChrissAnn , Jenny
           </a>{" "}
-          for a better web.
+          
         </div>
       </div>
     </footer>
