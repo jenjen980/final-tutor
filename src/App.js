@@ -12,6 +12,9 @@ import Register from "./Components/Register/Register";
 import Wrapper from "./Components/Wrapper";
 import Clap from "./Components/Clap";
 
+import Student from "./Components/Students";
+import Tutors from "./Components/Tutors";
+
 
 
 
@@ -29,6 +32,8 @@ class App extends Component {
           <Route path="/contact" component={Contact} />
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
+          <Route path="/student" component={Student} />
+          <Route path="/tutor" component={Tutors} />
           <Route component={Error} />
         </Switch>
 

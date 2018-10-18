@@ -34,7 +34,7 @@ class Calendar extends Component {
         {/* <h3>React Datepicker Example</h3> */}
         <form onSubmit={ this.handleSubmit }>
           <div className="form-group">
-            <label>Select Date: </label>
+            {/* <label>Select Date: </label> */}
             <DatePicker
               selected={ this.state.startDate }
               onSelect={this.handleSelect}

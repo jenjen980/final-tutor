@@ -21,7 +21,7 @@ const Contact = props => {
          <h4 style={{ padding: "50px 50px", textAlign: "center", color: "white", fontSize: "26px"}}>Contact Us</h4>
          </section>
          <Form />
-         <p style={{ textAlign: "center", color: "purple" }}>ADD HERE</p>
+         {/* <p style={{ textAlign: "center", color: "purple" }}>ADD HERE</p> */}
        </div>
 
 

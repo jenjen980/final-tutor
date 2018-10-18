@@ -1,16 +1,23 @@
 
 import React, { Component } from "react";
 import "./Form.css";
+import axios from "axios";
 
 
 class Form extends Component {
+  constructor(props){
+    super(props);
   // Setting the component's initial state
-  state = {
+  this.state = {
     firstName: "",
     lastName: "",
     email: "",
     message: ""
-  };
+  },
+
+  this.handleInputChange = this.handleInputChange.bind(this);
+  this.handleFormSubmit = this.handleFormSubmit.bind(this);
+};
 
   handleInputChange = event => {
     // Getting the value and name of the input which triggered the change
@@ -40,10 +47,11 @@ class Form extends Component {
     // Notice how each input has a `value`, `name`, and `onChange` prop
     return (
       <div>
+        
         <p>
           If you have any questions please contact us  
-          {this.state.firstName} {this.state.lastName}
-          {this.state.email} {this.state.message}
+          {/* {this.state.firstName} {this.state.lastName}
+          {this.state.email} {this.state.message} */}
         </p>
         <form className="form">
           <input
@@ -60,14 +68,14 @@ class Form extends Component {
             type="text"
             placeholder="Last Name"
           />
-                    <input
+          <input
             value={this.state.email}
             name="email"
             onChange={this.handleInputChange}
             type="text"
             placeholder="Email"
           />
-                    <input
+          <input
             value={this.state.message}
             name="message"
             onChange={this.handleInputChange}
