@@ -1,7 +1,10 @@
 import React, { Component } from "react";
 import "./tutors.css";
+
 import Cloud from "../Cloud";
 import Fetch from "../Fetch";
+=======
+
 
 
 class Tutors extends Component {
@@ -11,6 +14,7 @@ class Tutors extends Component {
     <p>
      This is the TUTOR page
     </p>
+
     <p>
         Availability
     </p>
@@ -27,6 +31,8 @@ class Tutors extends Component {
     /> */}
     
     {/* <Fetch /> */}
+=======
+
     </div>
      )}};
 

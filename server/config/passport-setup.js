@@ -13,36 +13,15 @@ passport.deserializeUser((user, done)=>{
    }
    )
 });
-const isValidPassword = function(user, password){
-   return bcrypt.compareSync(password, user.password);
-}
+// const isValidPassword = function(user, password){
+//    return bcrypt.compareSync(password, user.password);
+// }
+
+const saltRounds = 10;
 
 
-
-// passport.use('user-login', new LocalStrategy({
-//    usernameField: 'email',
-//    passwordField: 'password',
-//    passReqToCallback: true
-
-// }, function(req, username, password, done){
-//    console.log(username, "username")
-//    console.log('---------------------------------------------');
-//    userModel.find({ email: username}).then(user =>{
-//        console.log(user, "user coming back from db++++++++++++");
-//        if(!user.length > 0) {
-//            return done(null, false);
-//        }
-//        if(!isValidPassword(user[0], password)){
-//            console.log("is valid")
-//            return done(null, false)
-//        }
-//        console.log('reached bottom')
-//        return done(null, user);
-//    })
-// }))
-
-passport.use( new LocalStrategy({
-   usernameField: 'email',
+passport.use('userRegister', new LocalStrategy({
+   usernameField: 'username',
    passwordField: 'password',
    passReqToCallback: true
 
@@ -52,10 +31,10 @@ passport.use( new LocalStrategy({
    console.log('---------------------------------------------');
    userModel.find({ email: username}).then(user =>{
        console.log(user, "user coming back from db");
-       if(user.length > 0){
+       if(user){
            return done(null, false)
        }else {
-           bcrypt.hash(password, null, null, function(err, hash){
+           bcrypt.hash(password, saltRounds, function(err, hash){
                userModel.create({
                    email: username,
                    password: hash,
@@ -70,3 +49,42 @@ passport.use( new LocalStrategy({
        }
    })
 }))
+
+// passport.use(new LocalStrategy(
+//     function(username, password, done) {
+//         console.log(username, "username")
+//       User.findOne({ email: username }, function (err, user) {
+//         if (err) { return done(err); }
+//         if (!user) { return done(null, false); }
+//         // if (!user.verifyPassword(password)) { return done(null, false); }
+//         return done(null, user);
+//       });
+//     }
+//   ))
+
+passport.use(new LocalStrategy({
+    usernameField: 'username',
+    passwordField: 'password',
+    // passReqToCallback: true
+ 
+ }, function(username, password, done){
+     console.log(req)
+    console.log(username, "username")
+    console.log('---------------------------------------------');
+    userModel.find({ email: username}).then(user =>{
+        console.log(user, "user coming back from db");
+        if(!user){
+            return done(null, false)
+        }else {
+            bcrypt.compare(password, user.password, function(err, res){
+                if (res == true) {
+                    console.log("checking for unicorns");
+                    return done(null, user)
+                } else {
+                    res.send("Incorrect Password");
+                    res.redirect('/login');
+                }
+        })
+        }
+    })
+ }))
