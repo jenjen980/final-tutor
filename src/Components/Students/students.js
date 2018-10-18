@@ -17,11 +17,8 @@ class Students extends Component {
          This needs to allow a sudent to pick a tutor according to instrument. 
         </p>
         <StudentCard>
-
             {/* <Calendar /> */}
-=======
             <Calendar />
-
         </ StudentCard>
         <Calendar />
         <StudentCard />

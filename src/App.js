@@ -15,6 +15,9 @@ import {createBrowserHistory} from "history";
 import Wrapper from "./Components/Wrapper";
 import Clap from "./Components/Clap";
 
+import Student from "./Components/Students";
+import Tutors from "./Components/Tutors";
+const history = createBrowserHistory();
 
 import Student from "./Components/Students";
 import Tutors from "./Components/Tutors";
@@ -39,12 +42,16 @@ class App extends Component {
           <Route path="/contact" component={Contact} />
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
-
           <Route path="/student" component={Student} />
           <Route path="/tutor" component={Tutors} />
-=======
           
-          <Route path="/tutors" component={Tutors} />
+          {/* <Route path="/tutors" component={Tutors} />
+
+
+          <Route path="/student" component={Student} />
+          <Route path="/tutor" component={Tutors} /> */}
+          
+          {/* <Route path="/tutors" component={Tutors} /> */}
 
 
           <Route component={Error} />
