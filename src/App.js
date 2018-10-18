@@ -1,6 +1,6 @@
 
 import React, { Component } from 'react';
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { Router, Route, Switch } from "react-router-dom";
 
 import AboutUs from "./Components/AboutUs";
 import Contact from "./Components/ContactUs/Contact";
@@ -9,11 +9,15 @@ import NavBar from "./Components/NavBar";
 import Login from "./Components/Login/Login";
 import Register from "./Components/Register/Register";
 
+import Tutors from "./Components/Tutors";
+import {createBrowserHistory} from "history";
+
 import Wrapper from "./Components/Wrapper";
 import Clap from "./Components/Clap";
 
 import Student from "./Components/Students";
 import Tutors from "./Components/Tutors";
+const history = createBrowserHistory();
 
 
 
@@ -22,7 +26,7 @@ class App extends Component {
   render() {
     return (
      
-      <BrowserRouter>
+      <Router history={history}>
 
       <div>
       <NavBar />
@@ -34,12 +38,15 @@ class App extends Component {
           <Route path="/register" component={Register} />
           <Route path="/student" component={Student} />
           <Route path="/tutor" component={Tutors} />
+          
+          <Route path="/tutors" component={Tutors} />
+
           <Route component={Error} />
         </Switch>
 
       </div>
 
-          </BrowserRouter>
+          </Router>
       
     );
   }
