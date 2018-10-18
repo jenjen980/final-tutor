@@ -19,6 +19,12 @@ import Student from "./Components/Students";
 import Tutors from "./Components/Tutors";
 const history = createBrowserHistory();
 
+import Student from "./Components/Students";
+import Tutors from "./Components/Tutors";
+=======
+const history = createBrowserHistory();
+
+
 
 
 
@@ -39,7 +45,14 @@ class App extends Component {
           <Route path="/student" component={Student} />
           <Route path="/tutor" component={Tutors} />
           
-          <Route path="/tutors" component={Tutors} />
+          {/* <Route path="/tutors" component={Tutors} />
+
+
+          <Route path="/student" component={Student} />
+          <Route path="/tutor" component={Tutors} /> */}
+          
+          {/* <Route path="/tutors" component={Tutors} /> */}
+
 
           <Route component={Error} />
         </Switch>
