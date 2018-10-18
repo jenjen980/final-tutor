@@ -13,7 +13,7 @@ class Tutors extends Component {
     </p>
 
     <p>
-        Availability
+        Please upload your image so we can add you in the system
     </p>
     
     <Cloud />

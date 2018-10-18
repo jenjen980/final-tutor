@@ -27,6 +27,18 @@ router.post("/Form", function(req, res){
     });
 });
 
+router.put("/Form", function(req, res){
+    console.log(req.body);
+    res.send({
+        type: "PUT",
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
+        email: req.body.email,
+        message: req.body.message
+    });
+});
+
+
 // app.post("/Form", (req, res) => {
 //     var newForm = new Form(req.body);
 //     newForm.save((err, doc) => {

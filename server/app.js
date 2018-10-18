@@ -95,15 +95,15 @@ app.use(bodyParser.json());
 //app.use('/static',express.static(path.join(__dirname,'static')))
 
 // Serve up static assets (usually on heroku)
-if (process.env.NODE_ENV === "production") {
-    app.use(express.static("client/build"));
-  }
+// if (process.env.NODE_ENV === "production") {
+//     app.use(express.static("client/build"));
+//   }
 
-app.use('/api', router);
+// app.use('/api', router);
 
-app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "./client/build/index.html"));
-  });
+// app.get("*", (req, res) => {
+//     res.sendFile(path.join(__dirname, "./client/build/index.html"));
+//   });
   
 
 /** start server */
