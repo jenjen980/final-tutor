@@ -15,27 +15,13 @@ const Navbar = () => {
             <NavLink to="/login">Login  </NavLink>
             
             <NavLink to="/register">Register     </NavLink>
+
+             <NavLink to="/student">Students     </NavLink>
+
+             <NavLink to="/tutor">Tutors     </NavLink>
           </ul> 
         </div>
-    // </div>
 
-
-
-
-
-
-
-        // // <NavLink to="/">AboutUs</NavLink>
-        // <div>
-        //     {/* <ul id="nav-mobile" class="sidenav"> */}
-        //         <NavLink to="/">AboutUs</NavLink>
-        //         <NavLink to="/contact">Contact</NavLink>
-        //         {/* <NavLink to="/teacher">Teacher Page</NavLink>
-        //         <NavLink to="/student">Student Page</NavLink> */}
-        //     {/* </ul>
-        //     <a NavLink to="" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a> */}
-        // </div>
- 
     );
 }
 
