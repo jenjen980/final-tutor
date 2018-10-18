@@ -1,18 +1,7 @@
 import React, { Component } from "react";
 import "./tutors.css";
-<<<<<<< HEAD
-<<<<<<< HEAD
 import Cloud from "../Cloud";
 import Fetch from "../Fetch";
-=======
->>>>>>> 304a48ed97bb97c1175cdbbeb6c341273d7cd667
-=======
-
-import Cloud from "../Cloud";
-import Fetch from "../Fetch";
-=======
-
->>>>>>> 5c2e38d50d8d07e97459bb8bdb6e938d6ffc3d70
 
 
 class Tutors extends Component {
@@ -22,11 +11,7 @@ class Tutors extends Component {
     <p>
      This is the TUTOR page
     </p>
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 
->>>>>>> 5c2e38d50d8d07e97459bb8bdb6e938d6ffc3d70
     <p>
         Availability
     </p>
@@ -42,14 +27,10 @@ class Tutors extends Component {
      quality="auto"
     /> */}
     
-    {/* <Fetch /> */}
-=======
-<<<<<<< HEAD
->>>>>>> 304a48ed97bb97c1175cdbbeb6c341273d7cd667
-=======
 
->>>>>>> 5c2e38d50d8d07e97459bb8bdb6e938d6ffc3d70
     </div>
-     )}};
-
-export default Tutors;
+     );
+    }
+  }
+  
+  export default Tutors;
