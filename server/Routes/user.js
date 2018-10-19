@@ -17,29 +17,18 @@ router.post('/register', (req, res, next) => {
 
 })
 
-// router.post('/login',(req, res, next)=>{
-//     console.log(req.body);
-//    passport.authenticate('local',(err,user, info)=>{
-//        console.log("user", user)
-//        if(err) {return next(err)}
-//        console.log(user);
-//        console.log(info);
-//        if(!user){return res.json({auth:false})}
-//        req.logIn(user, function(err){           
-//            if(err){
-//                return next(err)
-//            } console.log(user.email);
-//            res.json({isUser:true, user:user})
-//        })
-//    })(req, res, next)
-// })
-
-router.post(
-  '/login', 
-  passport.authenticate('local'),
-  function(req, res) {
-    res.send("KK");
-  });
+router.post('/login',(req, res, next)=>{
+    console.log(req.body);
+   passport.authenticate('local',(err, user, info)=>{
+     console.log(err, user, info)
+       if(err) {return next(err)}
+       if(!user){return res.json({auth:false})}
+       req.logIn(user, function(err){
+           if(err){ return next(err); }
+           res.json({isUser:true, user:user})
+       })
+   })(req, res, next)
+})
 
 //May need to change route below
 router.get('/', (req, res, next) => {

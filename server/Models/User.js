@@ -5,7 +5,12 @@ mongoose.promise = Promise
 
 // Define userSchema
 const userSchema = new Schema({
-
+            username: {
+              type: String,
+              lowercase: true,
+              unique: true,
+              required: true
+            },
             firstName: {
                 type: String,
                 default: ''
