@@ -48,7 +48,7 @@ class Login extends Component {
              <input value={this.state.emailValue} onChange = {this.handleEmail} placeholder="Email"/>
         </div>
         <div className="login">
-             <input value={this.state.passwordValue} onChange= {this.handlePasword} placeholder ="password"/>
+             <input value={this.state.passwordValue} onChange= {this.handlePassword} placeholder ="password"/>
         </div>
         <br></br>
         {/* <button onClick={this.register}>Register</button>  */}
