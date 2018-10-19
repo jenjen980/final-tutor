@@ -26,16 +26,16 @@ passport.use('userRegister', new LocalStrategy({
    passReqToCallback: true
 
 }, function(req, username, password, done){
-    console.log(req)
-   console.log(username, "username")
+   console.log(username, password)
    console.log('---------------------------------------------');
-   userModel.find({ email: username}).then(user =>{
+   userModel.findOne({ username: username}).then(user =>{
        console.log(user, "user coming back from db");
        if(user){
            return done(null, false)
        }else {
            bcrypt.hash(password, saltRounds, function(err, hash){
                userModel.create({
+                   username: username,
                    email: username,
                    password: hash,
                    firstName: req.body.firstName,
@@ -48,19 +48,7 @@ passport.use('userRegister', new LocalStrategy({
            })
        }
    })
-}))
-
-// passport.use(new LocalStrategy(
-//     function(username, password, done) {
-//         console.log(username, "username")
-//       User.findOne({ email: username }, function (err, user) {
-//         if (err) { return done(err); }
-//         if (!user) { return done(null, false); }
-//         // if (!user.verifyPassword(password)) { return done(null, false); }
-//         return done(null, user);
-//       });
-//     }
-//   ))
+}));
 
 passport.use(new LocalStrategy({
     usernameField: 'username',
@@ -68,10 +56,9 @@ passport.use(new LocalStrategy({
     // passReqToCallback: true
  
  }, function(username, password, done){
-     console.log(req)
     console.log(username, "username")
     console.log('---------------------------------------------');
-    userModel.find({ email: username}).then(user =>{
+    userModel.findOne({ username: username}).then(user =>{
         console.log(user, "user coming back from db");
         if(!user){
             return done(null, false)
