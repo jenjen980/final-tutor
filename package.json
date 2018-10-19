@@ -10,7 +10,7 @@
     "connect-mongo": "^2.0.1",
     "cookie-session": "^2.0.0-beta.3",
     "cors": "^2.8.4",
-    "express": "^4.16.3",
+    "express": "^4.16.4",
     "express-flash-messages": "^0.1.1",
     "express-handlebars": "^3.0.0",
     "express-session": "^1.15.6",
@@ -46,5 +46,11 @@
   "main": "index.js",
   "devDependencies": {},
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }
