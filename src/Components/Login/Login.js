@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./login.css";
 import axios from 'axios';
 
@@ -12,7 +13,7 @@ class Login extends Component {
             passwordValue: ""
         }
         this.handleEmail = this.handleEmail.bind(this);
-        this.handlePasword = this.handlePasword.bind(this);
+        this.handlePassword = this.handlePassword.bind(this);
         this.submit = this.submit.bind(this);
         this.register = this.submit.bind(this);
     }
@@ -22,7 +23,7 @@ class Login extends Component {
         console.log(this.state.emailValue);
 
     }
-    handlePasword(event) {
+    handlePassword(event) {
         this.setState({ passwordValue: event.target.value})
         console.log(this.state.passwordValue);
     }
@@ -36,7 +37,7 @@ class Login extends Component {
         .then(res => {
           console.log(res);
           console.log(res.data);
-        })
+        }) //TODO: Add redirect properties
         }
 
   render() {
@@ -48,7 +49,7 @@ class Login extends Component {
              <input value={this.state.emailValue} onChange = {this.handleEmail} placeholder="Email"/>
         </div>
         <div className="login">
-             <input value={this.state.passwordValue} onChange= {this.handlePassword} placeholder ="password"/>
+             <input type="password" value={this.state.passwordValue} onChange= {this.handlePassword} placeholder ="password"/>
         </div>
         <br></br>
         {/* <button onClick={this.register}>Register</button>  */}

@@ -1,13 +1,7 @@
 import React, { Component } from 'react';
 import "./register.css";
 import axios from 'axios';
-import {
-    BrowserRouter as Router,
-    Route,
-    Link,
-    Redirect,
-    withRouter
-  } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link, Redirect, withRouter } from "react-router-dom";
 
 
 
@@ -72,9 +66,9 @@ class Register extends Component {
             if (response.status === 200) {
 
                 // update the state to redirect to tutor or student page
-                if( response.data.user.role == "Tutor"){
+                if( response.data.user.role == "Student"){
                     console.log("in redirect");
-                    this.props.history.push('/tutors');
+                    this.props.history.push('/student');
                 }
             }
         }).catch(error => {
@@ -102,7 +96,7 @@ class Register extends Component {
              <input value={this.state.roleValue} onChange = {this.handleRole} placeholder="Tutor or Student"/>
         </div>
         <div className="info">
-             <input value={this.state.passwordValue} onChange= {this.handlePasword} placeholder ="password"/>
+             <input type="password" value={this.state.passwordValue} onChange= {this.handlePasword} placeholder ="password"/>
         </div>
         <br></br>
         <button className="submitButton" onClick={this.submit}>Register</button>
