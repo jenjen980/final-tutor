@@ -11,6 +11,9 @@ let TutorSchema = new mongoose.Schema(
         description: String,
         feature_img: String,
         claps: Number,
+        profile_pic:{
+            type: String
+        }
         comments: [
             {
                 tutor: {

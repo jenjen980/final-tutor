@@ -72,9 +72,9 @@ class Register extends Component {
             if (response.status === 200) {
 
                 // update the state to redirect to tutor or student page
-                if( response.data.user.role == "Tutor"){
+                if( response.data.user.role == "Student"){
                     console.log("in redirect");
-                    this.props.history.push('/tutors');
+                    this.props.history.push('/student');
                 }
             }
         }).catch(error => {

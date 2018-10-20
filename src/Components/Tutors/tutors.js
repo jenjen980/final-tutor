@@ -8,6 +8,7 @@ class Tutors extends Component {
     render() {
      return (
     <div>
+        <img src={this.props.image} alt="" className="tutor-img circle responsive img" />
     <p>
      This is the TUTOR page
     </p>
@@ -16,7 +17,7 @@ class Tutors extends Component {
         Please upload your image so we can add you in the system
     </p>
     
-    <Cloud />
+    {/* <Cloud /> */}
     
      <Cloud
      type="fetch"

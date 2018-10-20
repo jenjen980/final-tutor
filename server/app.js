@@ -12,7 +12,7 @@ const cloudinary = require('cloudinary');
 
 const app = express();
 app.use(cors());
-const router = express.Router();
+// const router = express.Router();
 // const url = process.env.MONGODB_URI || "mongodb://localhost:27017/final-tutor" //change this to what we have
 
 const morgan = require('morgan')
@@ -62,7 +62,7 @@ app.use(passport.initialize())
 app.use(passport.session()) // calls the deserializeUser
 
 // Routes
-app.use('/user', user)
+app.use('/', require('./Routes'))
 
 //END OF AUTH CODE
 

@@ -1,9 +1,12 @@
-// server/routes/index.js
+const user = require('./user');
+const tutor = require('./tutor');
+// const form = require(".form");
 
-const user = require('./user')
-const tutor = require('./tutor')
+const router = require('express').Router();
 
-module.exports = (router) => {
-    // user(router)
-    tutor(router)
-};
+router.use('/user', user);
+// router.use('/tutor', tutor);
+// reouter.use('/form', form)
+
+
+module.exports = router;

@@ -1,16 +1,30 @@
 
 const mongoose = require('mongoose');
+const Schema = mongoose.Schema
+mongoose.promise = Promise
 
 
 
-let FormSchema = new mongoose.Schema(
+const formSchema = new Schema(
     {
-        firstName: String,
-        lastName: String,
-        email: String,
-        message: String,
-        claps: Number,
-)
-    };
+        firstName:{
+            type: String,
+            trim: true,
+            required: "String is Required"
+        },
+        lastName: {
+            type: String,
+            trim: true,
+            required: "String is Required"
+        },
+        email: {
+            type: String,
+            match: [/.+@.+\..+/, "Please enter a valid e-mail address"]
+        },
+        message: {
+            type: String
+        }
+    })
 
-module.exports = mongoose.model('Form', FormSchema);
+const Form = mongoose.model("Form", formSchema)
+module.exports = Form
