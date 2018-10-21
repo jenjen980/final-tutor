@@ -3,7 +3,7 @@ import DatePicker from "react-datepicker";
 import moment from "moment";
 
 import "react-datepicker/dist/react-datepicker.css";
-//import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 
 class Calendar extends Component {
   constructor(props) {
@@ -17,13 +17,15 @@ class Calendar extends Component {
 
   handleChange(date) {
     this.setState({
-      startDate: date
+      startDate: date,
+      // showTimeSelect: time
     })
   }
 
   handleSubmit(e){
     e.preventDefault();
     let main = this.state.startDate
+    // let main = this.state.showTimeSelect
     console.log(main.format('L'));
   }
 
@@ -52,7 +54,7 @@ class Calendar extends Component {
 
           </div>
           <div className="form-group">
-            <button className="btn btn-success">Add Date</button>
+            <button onClick={this.handleSubmit}>Add Date</button>
           </div>
         </form>
       </div>

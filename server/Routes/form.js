@@ -1,14 +1,14 @@
 const express = require('express')
 const router = express.Router()
 var mongoose = require('mongoose');
-// var Form = require(../Models/Form);
+var Form = require("../Models/Form");
 
 // router.get("/", function(req, res, next){
 //     res.render("./AboutUs");
 // })
 
 //changed from form
-router.get("/contact", function(req, res){
+router.get("/", function(req, res){
     res.send({
         type: "GET",
         firstName: req.body.firstName,
@@ -17,7 +17,7 @@ router.get("/contact", function(req, res){
         message: req.body.message
 });
 
-router.post("/new", function(req, res, next){
+router.post("/form", function(req, res, next){
     console.log(req.body);
     var formInfo = req.body;
     res.send({
@@ -27,7 +27,8 @@ router.post("/new", function(req, res, next){
         email: req.body.email,
         message: req.body.message
     });
-});
+})
+})
 
 // router.put("/Form", function(req, res){
 //     console.log(req.body);
@@ -52,4 +53,4 @@ router.post("/new", function(req, res, next){
 //     });
 // });
 
-module.export = router;
+module.exports = router;

@@ -1,6 +1,20 @@
-.navi {
+.Navbar{
+  height: 56px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: maroon;
+  padding: 0 20px;
+  box-sizing: border-box;
+  z-index: 90;
+}
+
+
+
+/* .navi {
   text-align: center;
   font-size: 25px;
   background-color: black;
   
-}
+} */

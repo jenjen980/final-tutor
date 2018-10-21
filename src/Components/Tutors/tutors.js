@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./tutors.css";
 import Cloud from "../Cloud";
 import Fetch from "../Fetch";
+import Calendar from "../Calendar/App";
 
 
 class Tutors extends Component {
@@ -27,7 +28,6 @@ class Tutors extends Component {
      fetch-format="auto"
      quality="auto"
     /> 
-    
 
     </div>
      );
