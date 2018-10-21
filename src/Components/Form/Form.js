@@ -24,13 +24,11 @@ class Form extends Component {
     // lastName: "",
     // email: "",
     // message: ""
-  }
-  // ,
+  };
 
   // this.handleInputChange = this.handleInputChange.bind(this);
   // this.handleFormSubmit = this.handleFormSubmit.bind(this);
-  // };
-
+  // }
 
   this.handleFirstName = this.handleFirstName.bind(this);
   this.handleLastName = this.handleLastName.bind(this);
@@ -85,34 +83,27 @@ submit(event) {
 
 
   // handleInputChange = event => {
-    // Getting the value and name of the input which triggered the change
-    // const { name, value} = event.target;
-    // const { lastName} = event.target.value;
-    // const { email} = event.target.value;
-    // const { message} = event.target.value;
-    
+  //   // Getting the value and name of the input which triggered the change
+  //   this.setState({
+  //     firstName: String,
+  //     lastName: String,
+  //     email: String,
+  //     message: String
+  //   })
+  // }
 
-    // Updating the input's state
-    // this.setState({
-    //   [name]: value,
-      // [lastName]: lastName,
-      // [email]: email,
-      // [message]: message,
-  //   });
-  // };
-
-  // handleFormSubmit = event => {
+  //handleFormSubmit(e){
     // Preventing the default behavior of the form submit (which is to refresh the page)
-    // event.preventDefault();
+   // e.preventDefault();
 
     // Alert the user their first and last name, clear `this.state.firstName` and `this.state.lastName`, clearing the inputs
-  //   alert(`Hello ${this.state.firstName} ${this.state.lastName} ${this.state.email} ${this.state.message}`);
-  //   this.setState({
-  //     firstName: "",
-  //     lastName: "",
-  //     email: "",
-  //     message: ""
-  //   });
+   // alert(`Hello ${this.state.firstName} ${this.state.lastName} ${this.state.email} ${this.state.message}`);
+    // this.setState({
+    //   firstName: "",
+    //   lastName: "",
+    //   email: "",
+    //   message: ""
+    // });
   // };
 
 

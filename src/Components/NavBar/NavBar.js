@@ -1,5 +1,5 @@
 import React from 'react';
-import "./NavBar.css";
+import classes from "./NavBar.css";
 import { Link } from 'react-router-dom';
 // import { Navbar, Nav, NavItem } from 'react-bootstrap'
 
@@ -7,11 +7,12 @@ import { Link } from 'react-router-dom';
 
  const Navbar = props => (
     <ul className="navbar-nav">
-      <li className="nav-item">
+      <li className="nav">
         <Link
           to="/"
           className={
             window.location.pathname === "/" ? "nav-link active" : "nav-link"
+            
           }
         >
           Home

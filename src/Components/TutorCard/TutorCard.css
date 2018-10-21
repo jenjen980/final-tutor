@@ -1,5 +1,5 @@
 .card{
-    height: 300px;
+    height: 400px;
     width: 380px;
     margin: 1rem;
     overflow: hidden;
@@ -8,18 +8,13 @@
     box-shadow: 0 3px 6px #999, 0 3px 6px #999;
     }
     
-    .card > .img-container{
+    /* .card > .img-container{
         width: 350px;
         height: 350px;
         overflow: hidden;
     
-    }
-    
-    /* .card > .img-container > .img {
-        margin-top: 10px;
-        width: 350px;
-        height: 350px;
     } */
+/*     
     .imgclass{
         top: 30%;
         left: 30%;
@@ -28,4 +23,4 @@
         width: 100%;
         height: auto;
         transform: translate( -30%, -30%);
-    }
+    } */
