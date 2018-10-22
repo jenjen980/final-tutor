@@ -1,13 +1,33 @@
 import React from 'react';
 import "./NavBar.css";
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 // import { Navbar, Nav, NavItem } from 'react-bootstrap'
+import { withRouter } from "react-router-dom";
 
 
 
- const Navbar = props => (
-    <ul className="navbar-nav">
-      <li className="nav-item">
+ class Navbar extends React.Component {
+
+  state ={}
+
+
+  logOut = (e) =>{
+    e.preventDefault
+  
+    axios.get('http://localhost:3001/user/logout').then(res => {
+      console.log(res);
+      this.props.history.push('/');
+    })
+      
+  
+  }
+
+  render(){
+    return(
+
+      <div className="navbar-nav">
+      <div className="nav-item">
         <Link
           to="/"
           className={
@@ -16,8 +36,8 @@ import { Link } from 'react-router-dom';
         >
           Home
         </Link>
-      </li>
-      <li className="nav-item">
+      </div>
+      <div className="nav-item">
         <Link
           to="/contact"
           className={
@@ -26,8 +46,8 @@ import { Link } from 'react-router-dom';
         >
           Contact
         </Link>
-      </li>
-      <li className="nav-item">
+      </div>
+      <div className="nav-item">
         <Link
           to="/login"
           className={
@@ -36,8 +56,8 @@ import { Link } from 'react-router-dom';
         >
           Login
         </Link>
-      </li>
-      <li className="nav-item">
+      </div>
+      <div className="nav-item">
         <Link
           to="/register"
           className={
@@ -46,8 +66,8 @@ import { Link } from 'react-router-dom';
         >
           Register
         </Link>
-      </li>
-      <li className="nav-item">
+      </div>
+      <div className="nav-item">
         <Link
           to="/student"
           className={
@@ -56,8 +76,8 @@ import { Link } from 'react-router-dom';
         >
           Students
         </Link>
-      </li>
-      <li className="nav-item">
+      </div>
+      <div className="nav-item">
         <Link
           to="/tutor"
           className={
@@ -66,21 +86,26 @@ import { Link } from 'react-router-dom';
         >
           Tutors
         </Link>
-      </li>
-      <li className="nav-item">
-        <Link
-          to="/logout"
+      </div>
+      <div className="nav-item">
+        <button
+          onClick={this.logOut}
+          to=""
           className={
             window.location.pathname === "/tutor" ? "nav-link active" : "nav-link"
           }
         >
           Logout
-        </Link>
-      </li>
-    </ul>
-  );
+        </button>
+      </div>
+    </div>
+
+    )
+  }
   
-  export default Navbar; 
+        }
+  
+  export default withRouter(Navbar); 
 
 
 

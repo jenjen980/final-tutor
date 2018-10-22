@@ -1,14 +1,14 @@
 const express = require('express')
 const router = express.Router()
 var mongoose = require('mongoose');
-// var Form = require(../Models/Form);
+const Form = require(../Models/Form);
 
 // router.get("/", function(req, res, next){
 //     res.render("./AboutUs");
 // })
 
 //changed from form
-router.get("/contact", function(req, res){
+router.get("/form", function(req, res){
     res.send({
         type: "GET",
         firstName: req.body.firstName,
@@ -52,4 +52,4 @@ router.post("/new", function(req, res, next){
 //     });
 // });
 
-module.export = router;
+module.exports = router;

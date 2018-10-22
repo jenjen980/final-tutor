@@ -1,9 +1,24 @@
 import React, { Component } from 'react';
 import "./register.css";
 import axios from 'axios';
+// import Select from 'react-select';
+import styled from 'styled-components'
 import { BrowserRouter as Router, Route, Link, Redirect, withRouter } from "react-router-dom";
 
+const Title = styled.h1`
+  font-size: 2em;
+  text-align: center;
+  color: Black;
+`;
 
+// const Input = styled.input`
+// margin: 0 auto;
+// float: none;
+// width: 25%;
+// padding: 10px;
+// border-radius: 10px;
+// box-shadow: 0 3px 6px #999, 0 3px 6px #999;
+//   `;
 
 class Register extends Component {
     constructor(props){
@@ -77,12 +92,28 @@ class Register extends Component {
             
         })
 }
+// this should go above in different areas
+
+// const options = [
+//     { value: 'Tutor', label: 'Tutor' },
+//     { value: 'Student', label: 'Student' }, 
+// ];
+
+// class App extends React.Component {
+//     state = {
+//         selectedOption: null,
+//     }
+//     handleChange = (selectedOption) => {
+//         this.setState({ selectedOption });
+//         console.log(`Option Selected: `, selectedOption);
+//     }
 
   render() {
+    // const { selectedOption} = this.state;
     return (
       <div >
        
-        <h1 className="header">Enter your information below to Register</h1>
+        <Title className="header">Enter your information below to Register</Title>
         <div className="info">
              <input value={this.state.firstNameValue} onChange = {this.handleFirstName} placeholder="First Name"/>
         </div>
@@ -94,6 +125,12 @@ class Register extends Component {
         </div>
         <div className="info">
              <input value={this.state.roleValue} onChange = {this.handleRole} placeholder="Tutor or Student"/>
+        {/* <Select
+        value={selectedOption}
+        onChange={this.handleChange}
+        options={options}
+        /> */}
+        
         </div>
         <div className="info">
              <input type="password" value={this.state.passwordValue} onChange= {this.handlePasword} placeholder ="password"/>
@@ -105,5 +142,6 @@ class Register extends Component {
     );
   }
 }
+
 
 export default withRouter(Register);
