@@ -1,9 +1,10 @@
 import React from 'react';
-import "./NavBar.css";
+import classes from "./NavBar.css";
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 // import { Navbar, Nav, NavItem } from 'react-bootstrap'
 import { withRouter } from "react-router-dom";
+
 
 
 
@@ -28,10 +29,16 @@ import { withRouter } from "react-router-dom";
 
       <div className="navbar-nav">
       <div className="nav-item">
+
+ const Navbar = props => (
+    <ul className="navbar-nav">
+      <li className="nav">
+
         <Link
           to="/"
           className={
             window.location.pathname === "/" ? "nav-link active" : "nav-link"
+            
           }
         >
           Home

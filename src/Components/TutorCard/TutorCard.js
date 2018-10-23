@@ -18,12 +18,12 @@ const TutorCard = props => {
     //   }
     
         return (
-        <div>
+            // <div className="card" >
+            <div className="img-container"> 
             <p> Instrument:{props.name}</p>
-            {/* <p> name={this.state.tutors[0].name}</p> */}
-        </div>
-    //  return <p> Instrument:{props.name}</p>
-    // return <p> name={this.state.tutors[0].name}</p> 
+             {/* <p> name={this.state.tutors[0].name}</p>  */}
+         </div>
+
         )
     }
 

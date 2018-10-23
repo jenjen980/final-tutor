@@ -129,33 +129,37 @@ onClick(){
         <div className="card" >
         <div className="img-container">
         <TutorCard name={this.state.tutors[0].name}/>
-        <p> Hello My name is.....</p>
+        <p> My name is Dave. Dave has taught for 10 years.</p>
         <img src={Guitar} alt="guitar" height="150px" width="220px"/>
         {/* {this.state.image === '' ? <Cloud onImageUpdate={this.onImageUpdate}/> : <img src={this.state.image}/>} */}
         <div><button id="Guitar" onClick={this.tutorHandler}>Choose Tutor</button></div>
         <br />
         </div>
       </div>
+      <Calendar />
 
         <div className="card" >
         <div className="img-container">
         <TutorCard name={this.state.tutors[1].name} Image=""/>
-        <p> Hello My name is.....</p>
-        <img src={Violin} alt="violin" height="150px" width="175px"/>
+        <p> My name is Amanda. I have taught for 5 years.</p>
+        <img src={Violin} alt="violin" height="150px" width="165px"/>
         <div><button id="Violin" onClick={this.tutorHandler}>Choose Tutor</button></div>
         <br />
         </div>
       </div>
+        <Calendar />
 
 
         <div className="card" >
         <div className="img-container">
         <TutorCard name={this.state.tutors[2].name}/>
-        <p> Hello My name is.....</p>
+        <p> My name is Mark. I have taught for 2 years.</p>
         <img src={Trumpet} alt="trumpet" height="150px" width="220px"/>
         <div><button id="Trumpet" onClick={this.tutorHandler}>Choose Tutor</button></div>
+        <br />
         </div>
        </div>
+        <Calendar />
      </div> 
     );
   }
