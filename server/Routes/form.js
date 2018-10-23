@@ -1,6 +1,9 @@
 const express = require('express')
 const router = express.Router()
 var mongoose = require('mongoose');
+
+const Form = require(../Models/Form);
+
 var Form = require("../Models/Form");
 
 // router.get("/", function(req, res, next){
@@ -8,7 +11,11 @@ var Form = require("../Models/Form");
 // })
 
 //changed from form
+
+router.get("/form", function(req, res){
+
 router.get("/", function(req, res){
+
     res.send({
         type: "GET",
         firstName: req.body.firstName,

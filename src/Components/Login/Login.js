@@ -37,8 +37,14 @@ class Login extends Component {
         .then(res => {
           console.log(res);
           console.log(res.data);
-        }) //TODO: Add redirect properties
+          if(res.data.isUser){
+            console.log("User is logged in")
+            this.props.history.push('/student');
+          }
+        }) 
         }
+
+
 
   render() {
     return (

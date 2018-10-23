@@ -24,7 +24,7 @@ const history = createBrowserHistory();
 
 
 const App = () => (
-  <Router>
+  <Router history={history}>
     <div>
       <Navbar />
       <Switch>
