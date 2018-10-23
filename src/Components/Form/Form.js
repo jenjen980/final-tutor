@@ -5,6 +5,7 @@ import axios from "axios";
 import { BrowserRouter as Router, Route, Link, Redirect, withRouter} from "react-router-dom";
 
 
+
 class Form extends Component {
   constructor(props){
     super(props);
@@ -55,6 +56,11 @@ submit(event) {
   event.preventDefault()
   console.log('handleSubmit')
 
+  console.log(this.firstName);
+  console.log(this.lastName);
+  console.log(this.email);
+  console.log(this.message);
+
   axios
     .post('http://localhost:3001/form', {
       firstName: this.state.firstNameValue,
@@ -86,18 +92,23 @@ submit(event) {
   //   })
   // }
 
-  //handleFormSubmit(e){
-    // Preventing the default behavior of the form submit (which is to refresh the page)
-   // e.preventDefault();
+  // handleFormSubmit(e){
+  //   // Preventing the default behavior of the form submit (which is to refresh the page)
+  // //  e.preventDefault();
+  //  console.log("submit form");
+  //  console.log(this.firstName);
+  //  console.log(this.lastName);
+  //  console.log(this.email);
+  //  console.log(this.message);
 
-    // Alert the user their first and last name, clear `this.state.firstName` and `this.state.lastName`, clearing the inputs
-   // alert(`Hello ${this.state.firstName} ${this.state.lastName} ${this.state.email} ${this.state.message}`);
-    // this.setState({
-    //   firstName: "",
-    //   lastName: "",
-    //   email: "",
-    //   message: ""
-    // });
+  //  // Alert the user their first and last name, clear `this.state.firstName` and `this.state.lastName`, clearing the inputs
+  //  alert(`Hello ${this.state.firstName} ${this.state.lastName} ${this.state.email} ${this.state.message}`);
+  //   this.setState({
+  //     firstName: "",
+  //     lastName: "",
+  //     email: "",
+  //     message: ""
+  //   });
   // };
 
 
@@ -114,6 +125,7 @@ submit(event) {
         </p>
         <form className="form" method="POST">
           <input
+            ref={(input) => {this.firstName = input;}}
             value={this.state.firstName}
             name="firstName"
             onChange={this.handleInputChange}
@@ -121,6 +133,7 @@ submit(event) {
             placeholder="First Name"
           />
           <input
+            ref={(input) => {this.lastName = input;}}
             value={this.state.lastName}
             name="lastName"
             onChange={this.handleInputChange}
@@ -128,6 +141,7 @@ submit(event) {
             placeholder="Last Name"
           />
           <input
+            ref={(input) => {this.email = input;}}
             value={this.state.email}
             name="email"
             onChange={this.handleInputChange}
@@ -135,10 +149,11 @@ submit(event) {
             placeholder="Email"
           />
           <input
+            ref={(input) => {this.message = input;}}
             value={this.state.message}
             name="message"
             onChange={this.handleInputChange}
-            type="text"
+            type="textarea"
             placeholder="Message"
           />
           <button onClick={this.handleFormSubmit}>Submit</button>

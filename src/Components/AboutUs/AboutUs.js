@@ -31,7 +31,7 @@ const AboutUs = () => {
 
     {/* <img src=""></img> */}
       <section style={image}>
-        <h4 className="pic" style={{  }}>About Signature Music Teachers</h4>
+        <h4 className="pic" style={{  }}></h4>
       </section>
         <p style={{ textAlign: "center", color: "purple" }}>Signature Music Teachers was founded in October of 2018.
           The basis for Signture Music Teachers is to help students select a music tutor that is right for them.
