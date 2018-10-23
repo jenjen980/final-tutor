@@ -30,18 +30,10 @@ router.post('/login',(req, res, next)=>{
    })(req, res, next)
 })
 
-//May need to change route below
-router.get('/', (req, res, next) => {
-   console.log('===== user!!======')
-   console.log(req.user)
-   if (req.user) {
-       res.json({ user: req.user })
-   } else {
-       res.json({ user: null })
-   }
-})
 
-router.post('/logout', (req, res) => {
+
+router.get('/logout', (req, res) => {
+    console.log("In Log out");
    if (req.user) {
        req.logout()
        res.send({ msg: 'logging out' })
@@ -49,5 +41,16 @@ router.post('/logout', (req, res) => {
        res.send({ msg: 'no user to log out' })
    }
 })
+
+//May need to change route below
+router.get('/', (req, res, next) => {
+    console.log('===== user!!======')
+    console.log(req.user)
+    if (req.user) {
+        res.json({ user: req.user })
+    } else {
+        res.json({ user: null })
+    }
+ })
 
 module.exports = router

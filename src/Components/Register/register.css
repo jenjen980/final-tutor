@@ -1,11 +1,11 @@
-.header {
+/* .header {
     text-align: center;
-}
+} */
 
 .info {
-    margin: 0 auto;
+    margin: auto;
     float: none;
-    width: 20%;
+    width: 25%;
     padding: 10px;
     border-radius: 10px;
     text-align: center;

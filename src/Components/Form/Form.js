@@ -2,13 +2,7 @@
 import React, { Component } from "react";
 import "./Form.css";
 import axios from "axios";
-import {
-  BrowserRouter as Router,
-  Route,
-  Link,
-  Redirect,
-  withRouter
-} from "react-router-dom";
+import { BrowserRouter as Router, Route, Link, Redirect, withRouter} from "react-router-dom";
 
 
 class Form extends Component {
@@ -16,10 +10,10 @@ class Form extends Component {
     super(props);
   // Setting the component's initial state
   this.state = {
-    firstNameValue: "",
-    lastNameValue: "",
-    emailValue: "",
-    messageValue: ""
+    firstNameValue: '',
+    lastNameValue: '',
+    emailValue: '',
+    messageValue: '',
     // firstName: "",
     // lastName: "",
     // email: "",
@@ -71,10 +65,10 @@ submit(event) {
   .then(response => {
     console.log("form response: ")
     console.log(response)
-    // if(response.status === 200){
+      if(response.status === 200){
     //   //redirect to homepage
     //   if(response.data.use.)
-    // }
+    }
   }).catch(error => {
     console.log("error: ")
     console.log(error);
@@ -154,4 +148,4 @@ submit(event) {
   }
 }
 
-export default Form;
+export default withRouter(Form);
