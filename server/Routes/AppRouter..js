@@ -3,24 +3,6 @@ import { BrowserRouter, Route, Switch, Link } from 'react-router-dom';
 
 
 
-//THESE ARE ROUTES FOR WHEN WE GET THE COMPONENTS SET UP
-//Links will need to be created for all route const. this enables the route to run client side
-
-// const Homepage = () => (
-//   <div>
-//     This is the Homepage component
-      // <Link to="/">Homepage</Link>
-//   </div>
-// );
-
-// const NotFoundPage = () => (
-//   <div>
-//     OOPS! 404! <Link to="/">Go Home</Link>
-//   </div>
-// );
-
-//component names might change based on what they are named
-
 const AppRouter =() => (
   <BrowserRouter>
     <Switch>

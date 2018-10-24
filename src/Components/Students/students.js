@@ -51,48 +51,14 @@ class Students extends Component {
     });
   };
 
-// handleTutorSelection = event =>{
-//   const { name, selected}
-// }
-
-  // getTutor = name => {
-  //   API.getTutor(name).then(res =>{
-  //     this.setState({
-  //       tutor: res.data.tutor
-  //     });
-  //   })
-  //   .catch(err => {
-  //     console.log(err);
-  //   });
-  // };
-  
-// need to post tutor
 postTutor =() => {
 
 };
 
-// onTutorUpdate = () => {
-
-//   const tUpdates = {
-//   name: this.state.name,
-//   about: this.state.about,
-//   image: this.state.image,
-//   instrument: this.state.instrument
-//   }
-// };
-
   tutorHandler(event) {
     event.preventDefault();
     event.persist();
-    // if(this.state.clicked.indexOf(tutors) === 1){
-    //   this.handleTutor
-    // }
     alert(`Tutor: ${this.state.tutors.name}`);
-    // this.setState({ tutors: [
-    //   {name: " Guitar"},
-    //   {name: " Violin"},
-    //   {name: " Trumpet"}
-    // ]});
 
     this.setState({
       eventValue: event.target.id
@@ -104,12 +70,6 @@ postTutor =() => {
 onClick(){
   
 }
-// handleTutor{
-// // tutor has been selected
-// };
-
-
-
 
   onImageUpdate = (url) => {
     this.setState({
@@ -126,21 +86,30 @@ onClick(){
   render() {
     return (
     <div>
-        <div className="card" >
-        <div className="img-container">
-        <TutorCard name={this.state.tutors[0].name}/>
-        <p> My name is Dave. Dave has taught for 10 years.</p>
+      <div className="row">
+        <div className="col-lg-4" >
+        <div className="item column-1">
+        {/* <TutorCard name={this.state.tutors[0].name}/> */}
+        {/* <p> My name is Dave. Dave has taught for 10 years.</p> */}
         <img src={Guitar} alt="guitar" height="150px" width="220px"/>
+        <h4 className="item-name">
+        <span className="tutor-name">Dave</span>
+        </h4>
+        <div classNam="text">
+        <p>I have been teaching guitar for 10 years.</p>
+        </div>
         {/* {this.state.image === '' ? <Cloud onImageUpdate={this.onImageUpdate}/> : <img src={this.state.image}/>} */}
         <div><button id="Guitar" onClick={this.tutorHandler}>Choose Tutor</button></div>
         <br />
         </div>
       </div>
       <Calendar />
+    </div>
 
-        <div className="card" >
-        <div className="img-container">
-        <TutorCard name={this.state.tutors[1].name} Image=""/>
+      <div className="row">
+        <div className="col-lg-4" >
+        <div className="item column-2">
+        {/* <TutorCard name={this.state.tutors[1].name} Image=""/> */}
         <p> My name is Amanda. I have taught for 5 years.</p>
         <img src={Violin} alt="violin" height="150px" width="165px"/>
         <div><button id="Violin" onClick={this.tutorHandler}>Choose Tutor</button></div>
@@ -148,10 +117,12 @@ onClick(){
         </div>
       </div>
         <Calendar />
+      </div>
 
 
-        <div className="card" >
-        <div className="img-container">
+      <div>
+        <div className="items-row cols-3 row-0" >
+        <div className="item column-3">
         <TutorCard name={this.state.tutors[2].name}/>
         <p> My name is Mark. I have taught for 2 years.</p>
         <img src={Trumpet} alt="trumpet" height="150px" width="220px"/>
@@ -161,8 +132,11 @@ onClick(){
        </div>
         <Calendar />
      </div> 
+    </div>
     );
   }
 }
 
 export default Students;
+
+
