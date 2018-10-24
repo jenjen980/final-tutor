@@ -22,14 +22,14 @@ class Form extends Component {
   };
 
   // this.handleInputChange = this.handleInputChange.bind(this);
-  // this.handleFormSubmit = this.handleFormSubmit.bind(this);
+  this.handleFormSubmit = this.handleFormSubmit.bind(this);
   // }
 
   this.handleFirstName = this.handleFirstName.bind(this);
   this.handleLastName = this.handleLastName.bind(this);
   this.handleEmail = this.handleEmail.bind(this);
-  // this.handleMessage = this.handleMesssage.bind(this);
-  this.submit = this.submit.bind(this);
+  //this.handleMessage = this.handleMesssage.bind(this);
+  // this.submit = this.submit.bind(this);
 }
 
 handleFirstName(event){
@@ -47,11 +47,42 @@ handleEmail(event){
   console.log(this.state.emailValue || '');
 }
 
-handleMessage(event){
+handleMessage = (event) => {
+  console.log("message", event.target.value);
   this.setState({ messageValue: event.target.value})
   console.log(this.state.messageValue || '');
 }
 
+<<<<<<< HEAD
+// submit(event) {
+//   event.preventDefault()
+//   console.log('handleSubmit')
+
+//   console.log(this.firstName);
+//   console.log(this.lastName);
+//   console.log(this.email);
+//   console.log(this.message);
+
+//   axios
+//     .post('http://localhost:3001/form', {
+//       firstName: this.state.firstNameValue,
+//       lastName: this.state.lastNameValue,
+//       email: this.state.emailNameValue,
+//       message: this.state.messageValue
+// })
+//   .then(response => {
+//     console.log("form response: ")
+//     console.log(response)
+//     // if(response.status === 200){
+//     //   //redirect to homepage
+//     //   if(response.data.use.)
+//     // }
+//   }).catch(error => {
+//     console.log("error: ")
+//     console.log(error);
+//   })
+// }
+=======
 submit(event) {
   event.preventDefault()
   console.log('handleSubmit')
@@ -80,6 +111,7 @@ submit(event) {
     console.log(error);
   })
 }
+>>>>>>> 0770e4bd131ac2b2c0aef0145305108bb447e7c9
 
 
   // handleInputChange = event => {
@@ -92,15 +124,37 @@ submit(event) {
   //   })
   // }
 
-  // handleFormSubmit(e){
-  //   // Preventing the default behavior of the form submit (which is to refresh the page)
-  // //  e.preventDefault();
-  //  console.log("submit form");
-  //  console.log(this.firstName);
-  //  console.log(this.lastName);
-  //  console.log(this.email);
-  //  console.log(this.message);
-
+  handleFormSubmit(event){
+    event.preventDefault();
+    // Preventing the default behavior of the form submit (which is to refresh the page)
+  //  e.preventDefault();
+  //  event.preventDefault()
+   console.log('handleSubmit');
+ 
+   console.log(this.firstName);
+   console.log(this.lastName);
+   console.log(this.email);
+   console.log(this.message);
+ 
+   axios
+     .post('http://localhost:3001/form', {
+       firstName: this.state.firstNameValue,
+       lastName: this.state.lastNameValue,
+       email: this.state.emailNameValue,
+       message: this.state.messageValue
+ })
+   .then(response => {
+     console.log("form response: ")
+     console.log(response)
+     // if(response.status === 200){
+     //   //redirect to homepage
+     //   if(response.data.use.)
+     // }
+   }).catch(error => {
+     console.log("error: ")
+     console.log(error);
+   })
+ }
   //  // Alert the user their first and last name, clear `this.state.firstName` and `this.state.lastName`, clearing the inputs
   //  alert(`Hello ${this.state.firstName} ${this.state.lastName} ${this.state.email} ${this.state.message}`);
   //   this.setState({
@@ -128,7 +182,7 @@ submit(event) {
             ref={(input) => {this.firstName = input;}}
             value={this.state.firstName}
             name="firstName"
-            onChange={this.handleInputChange}
+            onChange={this.handleFirstName}
             type="text"
             placeholder="First Name"
           />
@@ -136,7 +190,7 @@ submit(event) {
             ref={(input) => {this.lastName = input;}}
             value={this.state.lastName}
             name="lastName"
-            onChange={this.handleInputChange}
+            onChange={this.handleLastName}
             type="text"
             placeholder="Last Name"
           />
@@ -144,7 +198,7 @@ submit(event) {
             ref={(input) => {this.email = input;}}
             value={this.state.email}
             name="email"
-            onChange={this.handleInputChange}
+            onChange={this.handleEmail}
             type="text"
             placeholder="Email"
           />
@@ -152,7 +206,7 @@ submit(event) {
             ref={(input) => {this.message = input;}}
             value={this.state.message}
             name="message"
-            onChange={this.handleInputChange}
+            onChange={this.handleMessage}
             type="textarea"
             placeholder="Message"
           />

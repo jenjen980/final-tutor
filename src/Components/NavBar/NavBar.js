@@ -5,8 +5,6 @@ import axios from 'axios';
 // import { Navbar, Nav, NavItem } from 'react-bootstrap'
 import { withRouter } from "react-router-dom";
 
-
-
 class Navbar extends React.Component {
 
  state ={}
@@ -19,8 +17,6 @@ class Navbar extends React.Component {
      console.log(res);
      this.props.history.push('/');
    })
-
-
  }
 
  render(){
@@ -29,26 +25,17 @@ class Navbar extends React.Component {
 <div className="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
       <h5 className="my-0 mr-md-auto font-weight-normal">Signature Music Teachers</h5>
       <nav className="my-2 my-md-0 mr-md-3">
-         {/* <NavLink to="/"> Home  </NavLink>
-         <NavLink to="/contact">Contact  </NavLink>
-         <NavLink to="/register">Register </NavLink>
-         <NavLink to="/student">Students </NavLink>
-         <NavLink to="/tutor">Tutors  </NavLink>
-         <NavLink to="/logout">Logout </NavLink> */}
         <a className="p-2 text-dark" href="/">Home</a>
         <a className="p-2 text-dark" href="/contact">Contact</a>
         <a className="p-2 text-dark" href="/register">Register</a>
         <a className="p-2 text-dark" href="/student">Students</a>
         <a className="p-2 text-dark" href="/tutor">Tutors</a>
-        {/* <a className="p-2 text-dark" href="#">Logout</a> */}
       </nav>
       <a className="btn btn-outline-primary" href="/login">Login</a>
-      <a className="btn btn-outline-primary" onClick={this.logOut} href="/tutor">Logout</a>
-      {/* <a className="btn btn-outline-primary" href="#">Login</a> */}
+      <a className="btn btn-outline-primary" onClick={this.logOut} href="/">Logout</a>
     </div>
   
-);
- }
+    );
+  }
 };
 export default withRouter(Navbar);
-

@@ -8,6 +8,8 @@ router.get("/", function(req, res, next){
 })
 
 router.post("/", function(req, res, next){
+    console.log("form");
+
     console.log(req.body);
     var formInfo = req.body;
     res.send({
@@ -18,6 +20,5 @@ router.post("/", function(req, res, next){
         message: req.body.message
     });
 })
-
 
 module.exports = router;

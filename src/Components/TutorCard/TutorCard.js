@@ -9,14 +9,7 @@ import {Grid, Row, Col} from "react-bootstrap";
 
 const TutorCard = props => {
 
-    // state ={
-    //     tutors: [
-    //       {name: " Guitar"},
-    //       {name: " Violin"},
-    //       {name: " Trumpet"}
-    //     ]
-    //   }
-    
+
         return (
             // <div className="card" >
             <div className="img-container"> 

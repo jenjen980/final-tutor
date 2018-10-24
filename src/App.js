@@ -42,37 +42,3 @@ const App = () => (
 );
 
 export default App;
-
-
-
-
-
-
-
-// class App extends Component {
-//   render() {
-//     return (
-     
-//       <Router history={history}>
-
-//       <div>
-//       <NavBar />
-//         <Switch>
-//           <Route path="/" component={AboutUs} exact/>
-//           <Route path="/contact" component={Contact} />
-//           <Route path="/login" component={Login} />
-//           <Route path="/register" component={Register} />
-//           <Route path="/student" component={Students} />
-//           <Route path="/tutor" component={Tutors} />
-//           <Route component={Error} />
-//         </Switch>
-
-//       </div>
-
-//           </Router>
-      
-//     );
-//   }
-// }
-
-// export default App;
