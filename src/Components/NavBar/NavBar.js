@@ -5,7 +5,6 @@ import axios from 'axios';
 // import { Navbar, Nav, NavItem } from 'react-bootstrap'
 import { withRouter } from "react-router-dom";
 
-
 class Navbar extends React.Component {
 
  state ={}
