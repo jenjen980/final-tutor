@@ -10,12 +10,12 @@ const formSchema = new Schema(
         firstName:{
             type: String,
             trim: true,
-            required: "String is Required"
+            required: true
         },
         lastName: {
             type: String,
             trim: true,
-            required: "String is Required"
+            required: true
         },
         email: {
             type: String,
