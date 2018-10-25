@@ -3,11 +3,26 @@ import "./tutors.css";
 import Cloud from "../Cloud";
 import Fetch from "../Fetch";
 import Calendar from "../Calendar/App";
-
+import {Jumbotron} from "react-bootstrap";
+import {Image} from "react-bootstrap";
 
 class Tutors extends Component {
     render() {
      return (
+
+      <Jumbotron>
+
+         <Image src="https://s3.amazonaws.com/musicindustryhowtoimages/wp-content/uploads/2018/04/23200023/private-music-teacher.jpg" rounded />
+
+
+        <Jumbotron >
+  <h1>Welcome Teachers</h1>
+  <p>
+    This is a simple hero unit, a simple jumbotron-style component for calling
+    extra attention to featured content or information.
+  </p>
+ 
+
     <div>
         <img src={this.props.image} alt="" className="tutor-img circle responsive img" />
     <p>
@@ -30,8 +45,18 @@ class Tutors extends Component {
     /> 
 
     </div>
+    </Jumbotron>
+    </Jumbotron>
      );
     }
   }
+  const background3 = "/images/background3.jpg";
+
+const styles = {
+    container: {
+    backgroundImage: "/images/backgraound3.jpg"
+  }
+};
   
   export default Tutors;
+ 

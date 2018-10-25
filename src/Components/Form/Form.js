@@ -53,7 +53,6 @@ handleMessage = (event) => {
   console.log(this.state.messageValue || '');
 }
 
-<<<<<<< HEAD
 // submit(event) {
 //   event.preventDefault()
 //   console.log('handleSubmit')
@@ -73,45 +72,15 @@ handleMessage = (event) => {
 //   .then(response => {
 //     console.log("form response: ")
 //     console.log(response)
-//     // if(response.status === 200){
+//       if(response.status === 200){
 //     //   //redirect to homepage
 //     //   if(response.data.use.)
-//     // }
+//     }
 //   }).catch(error => {
 //     console.log("error: ")
 //     console.log(error);
 //   })
 // }
-=======
-submit(event) {
-  event.preventDefault()
-  console.log('handleSubmit')
-
-  console.log(this.firstName);
-  console.log(this.lastName);
-  console.log(this.email);
-  console.log(this.message);
-
-  axios
-    .post('http://localhost:3001/form', {
-      firstName: this.state.firstNameValue,
-      lastName: this.state.lastNameValue,
-      email: this.state.emailNameValue,
-      message: this.state.messageValue
-})
-  .then(response => {
-    console.log("form response: ")
-    console.log(response)
-      if(response.status === 200){
-    //   //redirect to homepage
-    //   if(response.data.use.)
-    }
-  }).catch(error => {
-    console.log("error: ")
-    console.log(error);
-  })
-}
->>>>>>> 0770e4bd131ac2b2c0aef0145305108bb447e7c9
 
 
   // handleInputChange = event => {
