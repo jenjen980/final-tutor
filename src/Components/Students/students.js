@@ -34,13 +34,13 @@ class Students extends Component {
   }
 
 
-  componentDidMount(){
-    this.getTutor();
-  }
+  // componentDidMount(){
+  //   this.getTutor();
+  // }
 
 
-  getTutor = name => {
-    API.getTutor(name).then(res =>{
+  getTutor = () => {
+    API.getTutor().then(res =>{
       this.setState({
         name: "", about:"", image:"", instrument:"",
         selected: res.data
@@ -95,7 +95,7 @@ onClick(){
         <h4 className="item-name">
         <span className="tutor-name">Dave</span>
         </h4>
-        <div classNam="text">
+        <div className="text">
         <p>I have been teaching guitar for 10 years.</p>
         </div>
         {/* {this.state.image === '' ? <Cloud onImageUpdate={this.onImageUpdate}/> : <img src={this.state.image}/>} */}
