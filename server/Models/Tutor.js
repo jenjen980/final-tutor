@@ -13,7 +13,7 @@ let TutorSchema = new mongoose.Schema(
         claps: Number,
         profile_pic:{
             type: String
-        }
+        },
         comments: [
             {
                 tutor: {

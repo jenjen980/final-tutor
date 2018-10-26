@@ -35,7 +35,7 @@ class Register extends Component {
         this.handleLastName = this.handleLastName.bind(this);
         this.handleEmail = this.handleEmail.bind(this);
         this.handleRole = this.handleRole.bind(this);
-        this.handlePasword = this.handlePasword.bind(this);
+        this.handlePassword = this.handlePassword.bind(this);
         this.submit = this.submit.bind(this);
         
     }
@@ -59,7 +59,7 @@ class Register extends Component {
         console.log(this.state.roleValue || '');
 
     }
-    handlePasword(event) {
+    handlePassword(event) {
         this.setState({ passwordValue: event.target.value})
         console.log(this.state.passwordValue || '');
     }
@@ -67,8 +67,7 @@ class Register extends Component {
       event.preventDefault()
       console.log('handleSubmit')
 
-      axios
-          .post('http://localhost:3001/user/register', {
+      axios.post('/user/register', {
           firstName: this.state.firstNameValue,
           lastName: this.state.lastNameValue,
           username: this.state.emailValue,
@@ -133,7 +132,7 @@ class Register extends Component {
         
         </div>
         <div className="info">
-             <input type="password" value={this.state.passwordValue} onChange= {this.handlePasword} placeholder ="password"/>
+             <input type="password" value={this.state.passwordValue} onChange= {this.handlePassword} placeholder ="password"/>
         </div>
         <br></br>
         <button className="submitButton" onClick={this.submit}>Register</button>

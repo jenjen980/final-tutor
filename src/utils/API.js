@@ -6,7 +6,7 @@ import axios from 'axios';
 export default{
 
     getTutor: function(name) {
-        return axios.get(`/api/`);
+        return axios.get(`/tutor`);
     },
 
 }
