@@ -3,22 +3,17 @@ const mongoose = require('mongoose')
 mongoose.Promise = global.Promise
 
 //your local database url
-//27017 is the default mongoDB port
-const uri = 'mongodb://localhost:27017/simple-mern-passport' 
 
-mongoose.connect(uri).then(
-    () => { 
-        /** ready to use. The `mongoose.connect()` promise resolves to undefined. */ 
-        console.log('Connected to Mongo');
-        
-    },
-    err => {
-         /** handle initial connection error */ 
-         console.log('error connecting to Mongo: ')
-         console.log(err);
-         
-        }
-  );
+const url = process.env.MONGODB_URI || "mongodb://jenndean:sand90@ds141633.mlab.com:41633/simple-mern-passport" //change this to what we have
+
+    mongoose.connect(url, { useNewUrlParser: true })
+    .then(function() {
+        console.log("connected to mongo");
+      })
+      .catch(function(err) {
+        console.log("error connecting to mongo");
+        console.log(err);
+      });
 
 
-module.exports = mongoose.connection
+ module.exports = mongoose.connection
