@@ -15,21 +15,13 @@ class Form extends Component {
     lastNameValue: '',
     emailValue: '',
     messageValue: '',
-    // firstName: "",
-    // lastName: "",
-    // email: "",
-    // message: ""
+
   };
 
-  // this.handleInputChange = this.handleInputChange.bind(this);
-  this.handleFormSubmit = this.handleFormSubmit.bind(this);
-  // }
 
+  this.handleFormSubmit = this.handleFormSubmit.bind(this);
   this.handleFirstName = this.handleFirstName.bind(this);
   this.handleLastName = this.handleLastName.bind(this);
-  this.handleEmail = this.handleEmail.bind(this);
-  //this.handleMessage = this.handleMesssage.bind(this);
-  // this.submit = this.submit.bind(this);
 }
 
 handleFirstName(event){
@@ -73,8 +65,6 @@ submit(event) {
     console.log("form response: ")
     console.log(response)
       if(response.status === 200){
-    //   //redirect to homepage
-    //   if(response.data.use.)
     }
   }).catch(error => {
     console.log("error: ")
@@ -82,24 +72,9 @@ submit(event) {
   })
 }
 
-
-  // handleInputChange = event => {
-  //   // Getting the value and name of the input which triggered the change
-  //   this.setState({
-  //     firstName: String,
-  //     lastName: String,
-  //     email: String,
-  //     message: String
-  //   })
-  // }
-
   handleFormSubmit(event){
     event.preventDefault();
-    // Preventing the default behavior of the form submit (which is to refresh the page)
-  //  e.preventDefault();
-  //  event.preventDefault()
    console.log('handleSubmit');
- 
    console.log(this.firstName);
    console.log(this.lastName);
    console.log(this.email);
@@ -115,24 +90,11 @@ submit(event) {
    .then(response => {
      console.log("form response: ")
      console.log(response)
-     // if(response.status === 200){
-     //   //redirect to homepage
-     //   if(response.data.use.)
-     // }
    }).catch(error => {
      console.log("error: ")
      console.log(error);
    })
  }
-  //  // Alert the user their first and last name, clear `this.state.firstName` and `this.state.lastName`, clearing the inputs
-  //  alert(`Hello ${this.state.firstName} ${this.state.lastName} ${this.state.email} ${this.state.message}`);
-  //   this.setState({
-  //     firstName: "",
-  //     lastName: "",
-  //     email: "",
-  //     message: ""
-  //   });
-  // };
 
 
 
@@ -143,8 +105,6 @@ submit(event) {
         
         <p>
           If you have any questions please contact us  
-          {/* {this.state.firstName} {this.state.lastName}
-          {this.state.email} {this.state.message} */}
         </p>
         <form className="form" method="POST">
           <input

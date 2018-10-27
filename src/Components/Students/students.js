@@ -1,9 +1,6 @@
 import React, { Component } from "react";
-import { BrowserRouter, Route, Switch, Link } from 'react-router-dom';
 import TutorCard from "../TutorCard";
 import Calendar from "../Calendar/App";
-import Cloud from "../Cloud";
-
 import Guitar from "../TutorCard/images/guitar.jpg";
 import Violin from "../TutorCard/images/violin.jpg";
 import Trumpet from "../TutorCard/images/trumpet.jpg";
@@ -89,8 +86,6 @@ onClick(){
       <div className="row">
         <div className="col-lg-4" >
         <div className="item column-1">
-        {/* <TutorCard name={this.state.tutors[0].name}/> */}
-        {/* <p> My name is Dave. Dave has taught for 10 years.</p> */}
         <img src={Guitar} alt="guitar" height="150px" width="220px"/>
         <h4 className="item-name">
         <span className="tutor-name">Dave</span>
@@ -98,7 +93,6 @@ onClick(){
         <div classNam="text">
         <p>I have been teaching guitar for 10 years.</p>
         </div>
-        {/* {this.state.image === '' ? <Cloud onImageUpdate={this.onImageUpdate}/> : <img src={this.state.image}/>} */}
         <div><button id="Guitar" onClick={this.tutorHandler}>Choose Tutor</button></div>
         <br />
         </div>
@@ -109,9 +103,13 @@ onClick(){
       <div className="row">
         <div className="col-lg-4" >
         <div className="item column-2">
-        {/* <TutorCard name={this.state.tutors[1].name} Image=""/> */}
-        <p> My name is Amanda. I have taught for 5 years.</p>
         <img src={Violin} alt="violin" height="150px" width="165px"/>
+        <h4 className="item-name">
+        <span className="tutor-name">Amanda</span>
+        </h4>
+        <div classNam="text">
+        <p>I have been teaching violin for 5 years.</p>
+        </div>
         <div><button id="Violin" onClick={this.tutorHandler}>Choose Tutor</button></div>
         <br />
         </div>
@@ -124,8 +122,13 @@ onClick(){
         <div className="items-row cols-3 row-0" >
         <div className="item column-3">
         <TutorCard name={this.state.tutors[2].name}/>
-        <p> My name is Mark. I have taught for 2 years.</p>
         <img src={Trumpet} alt="trumpet" height="150px" width="220px"/>
+        <h4 className="item-name">
+        <span className="tutor-name">Mark</span>
+        </h4>
+        <div classNam="text">
+        <p>I have been teaching trumpet for 2 years.</p>
+        </div>
         <div><button id="Trumpet" onClick={this.tutorHandler}>Choose Tutor</button></div>
         <br />
         </div>

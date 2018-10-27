@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import Dropzone from 'react-dropzone';
 import request from 'superagent';
-import { Image } from 'react-bootstrap';
+// import { Image } from 'react-bootstrap';
 
 const cloudinary_upload_preset = "Default";
 const cloudinary_upload_url = "https://api.cloudinary.com/v1_1/dm1qubnlu/image/upload";
-const cloudinary_fetch_url = "https://api.cloudinary.com/v1_1/dm1qubnlu/image/fetch";
+// const cloudinary_fetch_url = "https://api.cloudinary.com/v1_1/dm1qubnlu/image/fetch";
 
 
 
@@ -23,21 +23,6 @@ class Cloud extends Component {
   };
 }
 
-
-// onPhotoSelected(file) {
-//   this.setState({
-//     imageFile: file[0]
-
-//   });
-//    this.fileUploadHandler(file[0]);
-// }
-
-
-//   fileSelectedHandler = event => {
-//     this.setState({
-//       selectedFile: event.target.files[0]
-//     })
-//   }
 onImageDrop(files){
   this.setState({
     uploadedFile: files[0]

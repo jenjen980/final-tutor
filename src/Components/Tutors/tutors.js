@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import "./tutors.css";
 import Cloud from "../Cloud";
-import Fetch from "../Fetch";
-import Calendar from "../Calendar/App";
+
 
 
 class Tutors extends Component {
@@ -11,7 +10,7 @@ class Tutors extends Component {
     <div>
         <img src={this.props.image} alt="" className="tutor-img circle responsive img" />
     <p>
-     This is the TUTOR page
+     This is the Tutor page
     </p>
 
     <p>

@@ -11,15 +11,6 @@ const Title = styled.h1`
   color: Black;
 `;
 
-// const Input = styled.input`
-// margin: 0 auto;
-// float: none;
-// width: 25%;
-// padding: 10px;
-// border-radius: 10px;
-// box-shadow: 0 3px 6px #999, 0 3px 6px #999;
-//   `;
-
 class Register extends Component {
     constructor(props){
       super(props);
@@ -68,7 +59,7 @@ class Register extends Component {
       console.log('handleSubmit')
 
       axios
-          .post('http://localhost:3001/user/register', {
+          .post('/user/register', {
           firstName: this.state.firstNameValue,
           lastName: this.state.lastNameValue,
           username: this.state.emailValue,
@@ -92,21 +83,7 @@ class Register extends Component {
             
         })
 }
-// this should go above in different areas
 
-// const options = [
-//     { value: 'Tutor', label: 'Tutor' },
-//     { value: 'Student', label: 'Student' }, 
-// ];
-
-// class App extends React.Component {
-//     state = {
-//         selectedOption: null,
-//     }
-//     handleChange = (selectedOption) => {
-//         this.setState({ selectedOption });
-//         console.log(`Option Selected: `, selectedOption);
-//     }
 
   render() {
     // const { selectedOption} = this.state;
@@ -125,11 +102,6 @@ class Register extends Component {
         </div>
         <div className="info">
              <input value={this.state.roleValue} onChange = {this.handleRole} placeholder="Tutor or Student"/>
-        {/* <Select
-        value={selectedOption}
-        onChange={this.handleChange}
-        options={options}
-        /> */}
         
         </div>
         <div className="info">

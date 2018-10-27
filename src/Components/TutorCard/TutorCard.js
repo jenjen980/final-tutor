@@ -1,9 +1,7 @@
 import React from "react";
 import "./TutorCard.css";
 import "../Cloud/Cloud.js";
-// import "./images";
-import Calendar from "../Calendar/App";
-import {Grid, Row, Col} from "react-bootstrap";
+
 
 
 

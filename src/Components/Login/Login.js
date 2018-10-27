@@ -48,7 +48,6 @@ class Login extends Component {
 
   render() {
     return (
-      // <div style={{ textAlign: 'center', backgroundColor: "#999", width: "1000px", minHeight: "200px"}}>
       <div>
         <h1 className="header">Please enter your email and password</h1>
         <div className="login">
@@ -58,7 +57,6 @@ class Login extends Component {
              <input type="password" value={this.state.passwordValue} onChange= {this.handlePassword} placeholder ="password"/>
         </div>
         <br></br>
-        {/* <button onClick={this.register}>Register</button>  */}
         <button className="submitButton" onClick={this.submit}>Login</button>
        
       </div>
