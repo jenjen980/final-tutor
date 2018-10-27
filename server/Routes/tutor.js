@@ -8,30 +8,30 @@
 //      * get all tutors
 //      */
 //     router
-//         .route('/tutors')
+//         .route('/')
 //         .get(tutorcontroller.getAll)
 //     /**
 //      * add a tutor
 //      */
 //     router
-//         .route('/tutor')
+//         .route('/')
 //         .post(tutorcontroller.addTutor)
 //     /**
 //      * clap on a tutor
 //      */
 //     router
-//         .route('/tutor/clap')
+//         .route('/clap')
 //         .post(tutorcontroller.clapTutor)
 //     /**
 //      * comment on a Tutor
 //      */
 //     router
-//         .route('/tutor/comment')
+//         .route('/comment')
 //         .post(tutorcontroller.commentTutor)
 //     /**
 //      * get a particlular tutor to view
 //      */
 //     router
-//         .route('/tutor/:id')
+//         .route('/:id')
 //         .get(tutorcontroller.getTutor)
 // }
