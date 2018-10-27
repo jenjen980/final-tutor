@@ -21,7 +21,7 @@ const AboutUs = () => {
       </section>
         <p style={{ textAlign: "center", color: "purple" }}>Signature Music Teachers was founded in October of 2018.
           The basis for Signture Music Teachers is to help students select a music tutor that is right for them.
-          ADD MORE HERE....
+          
         </p>
 
 

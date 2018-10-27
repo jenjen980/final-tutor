@@ -58,7 +58,7 @@ postTutor =() => {
   tutorHandler(event) {
     event.preventDefault();
     event.persist();
-    alert(`Tutor: ${this.state.tutors.name}`);
+    // alert(`Tutor: ${this.state.tutors.name}`);
 
     this.setState({
       eventValue: event.target.id
@@ -110,8 +110,14 @@ onClick(){
         <div className="col-lg-4" >
         <div className="item column-2">
         {/* <TutorCard name={this.state.tutors[1].name} Image=""/> */}
-        <p> My name is Amanda. I have taught for 5 years.</p>
+        
         <img src={Violin} alt="violin" height="150px" width="165px"/>
+        <h4 className="item-name">
+       <span className="tutor-name">Amanda</span>
+       </h4>
+       <div classNam="text">
+       <p>I have been teaching violin for 5 years.</p>
+       </div>
         <div><button id="Violin" onClick={this.tutorHandler}>Choose Tutor</button></div>
         <br />
         </div>
@@ -124,8 +130,14 @@ onClick(){
         <div className="items-row cols-3 row-0" >
         <div className="item column-3">
         <TutorCard name={this.state.tutors[2].name}/>
-        <p> My name is Mark. I have taught for 2 years.</p>
+        
         <img src={Trumpet} alt="trumpet" height="150px" width="220px"/>
+        <h4 className="item-name">
+       <span className="tutor-name">Mark</span>
+       </h4>
+       <div classNam="text">
+       <p>I have been teaching trumpet for 2 years.</p>
+       </div>
         <div><button id="Trumpet" onClick={this.tutorHandler}>Choose Tutor</button></div>
         <br />
         </div>
