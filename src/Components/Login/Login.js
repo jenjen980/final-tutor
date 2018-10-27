@@ -58,7 +58,7 @@ class Login extends Component {
              <input type="password" value={this.state.passwordValue} onChange= {this.handlePassword} placeholder ="password"/>
         </div>
         <br></br>
-        {/* <button onClick={this.register}>Register</button>  */}
+       
         <button className="submitButton" onClick={this.submit}>Login</button>
        
       </div>
